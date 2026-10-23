@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>HybridFuelCo — Jouw persoonlijke voedingsschema</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+  :root{
+    --ink:#17130E; --ink2:#231C15; --ember:#FF5A1F; --ember2:#FF7A47;
+    --paper:#F7F2E9; --muted:#9A8F7E; --line:#34291F; --sage:#7FA35C;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ink);color:var(--paper);font-family:Inter,sans-serif;line-height:1.6}
+  .disp{font-family:Oswald,sans-serif}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);padding:18px 0}
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo .mark{width:36px;height:36px;border-radius:8px;background:var(--ember);display:flex;align-items:center;justify-content:center;font-family:Oswald;font-weight:700;color:var(--ink);font-size:21px}
+  .logo .name{font-family:Oswald;font-weight:700;font-size:22px;letter-spacing:.5px;line-height:1}
+  .logo .name span{color:var(--ember)}
+  .logo .tag{font-size:10.5px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-top:3px}
+  .hero{text-align:center;padding:60px 0 40px}
+  .hero h1{font-family:Oswald;font-weight:700;font-size:clamp(30px,7vw,52px);line-height:1.05;text-transform:uppercase;letter-spacing:.5px}
+  .hero h1 em{color:var(--ember);font-style:normal}
+  .hero p{color:var(--muted);font-size:17px;max-width:560px;margin:18px auto 0}
+  .points{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:34px 0 10px}
+  .point{background:var(--ink2);border:1px solid var(--line);border-radius:10px;padding:10px 16px;font-size:14px;font-weight:500}
+  .point b{color:var(--ember)}
+  .plans{display:grid;grid-template-columns:1fr;gap:18px;padding:30px 0 10px}
+  @media(min-width:680px){.plans{grid-template-columns:1fr 1fr}}
+  .card{background:var(--ink2);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column}
+  .card.featured{border-color:var(--ember)}
+  .badge{align-self:flex-start;background:var(--ember);color:var(--ink);font-family:Oswald;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:14px}
+  .card h3{font-family:Oswald;font-weight:600;font-size:22px;text-transform:uppercase;letter-spacing:1px}
+  .price{font-family:Oswald;font-weight:700;font-size:40px;margin:10px 0 2px}
+  .price small{font-size:15px;color:var(--muted);font-weight:400}
+  .card ul{list-style:none;margin:18px 0 24px;display:flex;flex-direction:column;gap:9px}
+  .card li{font-size:14px;padding-left:24px;position:relative;color:var(--paper)}
+  .card li::before{content:"✓";position:absolute;left:0;color:var(--ember);font-weight:800}
+  .btn{margin-top:auto;display:block;text-align:center;text-decoration:none;background:var(--ember);color:var(--ink);font-family:Oswald;font-weight:700;font-size:16px;letter-spacing:1px;text-transform:uppercase;padding:14px;border-radius:10px;transition:background .15s}
+  .btn:hover{background:var(--ember2)}
+  .btn.ghost{background:transparent;border:1px solid var(--ember);color:var(--ember)}
+  .how{padding:44px 0}
+  .how h2{font-family:Oswald;font-weight:600;font-size:26px;text-transform:uppercase;letter-spacing:1px;text-align:center;margin-bottom:26px}
+  .steps{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:680px){.steps{grid-template-columns:repeat(3,1fr)}}
+  .step{background:var(--ink2);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .step .n{font-family:Oswald;font-weight:700;font-size:28px;color:var(--ember);line-height:1}
+  .step h4{font-size:15px;font-weight:600;margin:8px 0 4px}
+  .step p{font-size:13px;color:var(--muted)}
+  .safe{background:var(--ink2);border:1px solid var(--line);border-radius:12px;padding:20px;font-size:12.5px;color:var(--muted);margin:10px 0 40px;line-height:1.7}
+  .safe b{color:var(--paper)}
+  footer{border-top:1px solid var(--line);padding:24px 0 40px;text-align:center;color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap logo">
+    <div class="mark">H</div>
+    <div>
+      <div class="name">HYBRIDFUEL<span>CO</span></div>
+      <div class="tag">Persoonlijke voedingsschema's</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <h1>Fuel the work.<br><em>Jouw plan, jouw macro's.</em></h1>
+    <p>Een persoonlijk weekschema op jouw doelen en voorkeuren — met exacte gewichten en een boodschappenlijst. Gemaakt door een kok, niet door een rekenmachine.</p>
+    <div class="points">
+      <div class="point"><b>✓</b> Op jouw macro's berekend</div>
+      <div class="point"><b>✓</b> Met weeggewichten per maaltijd</div>
+      <div class="point"><b>✓</b> Inclusief boodschappenlijst</div>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- Plak je Stripe-betaallink bij href="[JOUW STRIPE WEEK-LINK]".   -->
+  <!-- ============================================================= -->
+  <section class="plans">
+    <div class="card">
+      <h3>Weekschema op maat</h3>
+      <div class="price">€14,95</div>
+      <ul>
+        <li>Berekend op jóuw doelen en macro's</li>
+        <li>Weeggewichten per maaltijd</li>
+        <li>Boodschappenlijst inbegrepen</li>
+        <li>Als Excel om af te strepen en bij te houden</li>
+        <li>Gemaakt door een kok, niet door een template</li>
+      </ul>
+      <a class="btn ghost" href="[JOUW STRIPE WEEK-LINK]">Bestel voor €14,95</a>
+    </div>
+
+    <div class="card featured">
+      <div class="badge">Beste keuze · bespaar €0,95</div>
+      <h3>Weekschema + Hyrox-gids</h3>
+      <div class="price">€17,95</div>
+      <ul>
+        <li>Alles uit het weekschema</li>
+        <li><strong>+ Gids: Eten rond je Hyrox-training</strong></li>
+        <li>Voeding afgestemd op zware &amp; rustdagen</li>
+        <li>Race-week aanpak inbegrepen</li>
+      </ul>
+      <a class="btn" href="[JOUW STRIPE BUNDEL-LINK]">Bestel voor €17,95</a>
+    </div>
+  </section>
+
+  <p style="text-align:center;color:var(--muted);font-size:14px;max-width:52ch;margin:6px auto 0">Bevalt het? Daarna kun je eenvoudig opschalen — een nieuwe week of een doorlopend plan. Geen verplichting vooraf.</p>
+
+  <section class="how">
+    <h2>Hoe het werkt</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h4>Je bestelt je plan</h4><p>Eén persoonlijk weekschema, veilig betalen via Stripe.</p></div>
+      <div class="step"><div class="n">2</div><h4>Wij maken je schema</h4><p>Afgestemd op jouw doel, dieet en voorkeuren — met exacte gewichten.</p></div>
+      <div class="step"><div class="n">3</div><h4>Jij houdt het bij</h4><p>Open je plan in Excel of Google Sheets en streep af op je telefoon.</p></div>
+    </div>
+  </section>
+
+  <section class="safe">
+    <b>Belangrijk:</b> onze schema's geven algemene voedingsrichtlijnen op basis van gangbare formules — het is geen medisch of diëtisch advies. Calorieën en macro's zijn schattingen; ieders behoefte verschilt. Drink altijd voldoende water, bouw veranderingen rustig op, en raadpleeg een arts of diëtist voordat je met een nieuw plan begint — zeker bij een medische aandoening, zwangerschap, als je jonger bent dan 18, of bij een verleden met eetproblemen.
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">© HybridFuelCo · Fuel the work.</div>
+</footer>
+</body>
+</html>
