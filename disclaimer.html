@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Voedingsdisclaimer — HybridFuelCo</title>
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#0A0A0A" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+  :root{--black:#0A0A0A;--black2:#121212;--white:#FFFFFF;--red:#E8321E;--red2:#FF4B37;--muted:#9a9a9a;--line:#242424}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--black);color:#e9e9e9;font-family:Inter,sans-serif;line-height:1.72;-webkit-font-smoothing:antialiased}
+  .disp{font-family:Archivo,sans-serif}
+  a{color:inherit}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .navin{max-width:980px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:16px}
+  .brand{display:flex;align-items:center;gap:11px;flex:1}
+  .brand .mark{width:28px;height:28px;border-radius:7px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:Archivo;font-weight:800;color:#fff;font-size:16px}
+  .brand .name{font-family:Archivo;font-weight:800;font-size:17px;letter-spacing:-.3px}
+  .brand .name span{color:var(--red)}
+  .back{color:var(--muted);font-size:13.5px;font-weight:500;transition:color .2s;text-decoration:none}
+  .back:hover{color:#fff}
+  .flags{display:flex;gap:4px}
+  .flag{cursor:pointer;padding:3px 5px;border-radius:6px;border:1px solid transparent;opacity:.45;line-height:0;transition:opacity .2s}
+  .flag.on{opacity:1;border-color:var(--red);background:rgba(232,50,30,.12)}
+  header.top{padding:62px 0 30px;border-bottom:1px solid var(--line)}
+  .eyebrow{color:var(--red);font-size:13px;font-weight:600;letter-spacing:.5px;margin-bottom:12px}
+  h1{font-family:Archivo;font-weight:900;font-size:clamp(32px,6vw,52px);letter-spacing:-1.3px;line-height:1.02}
+  .updated{color:var(--muted);font-size:13px;margin-top:16px}
+  main{padding:40px 0 20px}
+  h2{font-family:Archivo;font-weight:800;font-size:21px;letter-spacing:-.4px;margin:38px 0 12px;color:#fff}
+  h2:first-child{margin-top:0}
+  p{margin:0 0 14px;font-size:15.5px}
+  ul{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:8px;font-size:15.5px}
+  strong{color:#fff;font-weight:600}
+  .lead{color:var(--muted);font-size:16px;margin-bottom:28px}
+  .box{border-left:2px solid var(--red);background:var(--black2);padding:16px 20px;border-radius:0 10px 10px 0;margin:4px 0 22px;font-size:14.5px;color:#d8d8d8}
+  footer{padding:40px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px;margin-top:30px}
+  .flinks{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:18px}
+  .flinks a{color:var(--muted);text-decoration:none;transition:color .2s}
+  .flinks a:hover{color:#fff}
+  .fb{font-family:Archivo;font-weight:800;font-size:16px;color:#fff;margin-bottom:8px;letter-spacing:-.3px}
+  .fb span{color:var(--red)}
+  .biz{line-height:1.9}
+  .ph{color:var(--red2);font-weight:600}
+  [data-lang]{display:none}
+  body.nl [data-lang="nl"]{display:revert}
+  body.en [data-lang="en"]{display:revert}
+  .blk[data-lang]{display:none}
+  body.nl .blk[data-lang="nl"]{display:block}
+  body.en .blk[data-lang="en"]{display:block}
+</style>
+</head>
+<body class="nl">
+
+<nav>
+  <div class="navin">
+    <a class="brand" href="index.html">
+      <div class="mark">H</div>
+      <div class="name">HYBRIDFUEL<span>CO</span></div>
+    </a>
+    <a class="back" href="index.html"><span data-lang="nl">← Terug naar site</span><span data-lang="en">← Back to site</span></a>
+    <div class="flags">
+      <div class="flag on" id="fnl" onclick="setLang('nl')" title="Nederlands"><svg width="22" height="15" viewBox="0 0 9 6"><rect width="9" height="6" fill="#fff"/><rect width="9" height="2" fill="#AE1C28"/><rect y="4" width="9" height="2" fill="#21468B"/></svg></div>
+      <div class="flag" id="fen" onclick="setLang('en')" title="English"><svg width="22" height="15" viewBox="0 0 60 30"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/></svg></div>
+    </div>
+  </div>
+</nav>
+
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow" data-lang="nl">Belangrijk</div><div class="eyebrow" data-lang="en">Important</div>
+    <h1 class="disp" data-lang="nl">Voedingsdisclaimer</h1>
+    <h1 class="disp" data-lang="en">Nutrition Disclaimer</h1>
+    <div class="updated" data-lang="nl">Laatst bijgewerkt: oktober 2026</div>
+    <div class="updated" data-lang="en">Last updated: October 2026</div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="blk" data-lang="nl">
+      <div class="box">
+        De schema's en gidsen van HybridFuelCo geven <strong>algemene voedingsrichtlijnen</strong> op basis van gangbare formules. Het is <strong>geen medisch, diëtisch of therapeutisch advies</strong> en geen vervanging daarvan.
+      </div>
+
+      <h2>Schattingen, geen zekerheden</h2>
+      <p>Calorieën en macro's in onze schema's zijn <strong>schattingen</strong>, berekend uit de gegevens die je zelf opgeeft. Ieders lichaam en behoefte is anders. Gebruik de schema's als richtlijn, luister naar je lichaam en stel bij waar nodig.</p>
+
+      <h2>Raadpleeg een professional</h2>
+      <p>Overleg met een arts of diëtist voordat je met een nieuw voedings- of trainingsplan begint — zeker als:</p>
+      <ul>
+        <li>je een medische aandoening hebt of medicijnen gebruikt;</li>
+        <li>je zwanger bent of borstvoeding geeft;</li>
+        <li>je jonger bent dan 18 jaar;</li>
+        <li>je een verleden hebt met eetproblemen of een verstoorde relatie met eten.</li>
+      </ul>
+      <p>Merk je klachten op tijdens het volgen van een plan, stop dan en raadpleeg een professional.</p>
+
+      <h2>Allergieën en intoleranties</h2>
+      <p>Jij bent zelf verantwoordelijk voor het controleren van ingrediënten op allergenen of intoleranties. Pas maaltijden aan waar dat voor jou nodig is.</p>
+
+      <h2>Je eigen verantwoordelijkheid</h2>
+      <p>Drink voldoende water, bouw veranderingen rustig op en forceer niets. De keuzes die je maakt op basis van onze schema's blijven je eigen verantwoordelijkheid. Zie ook onze <a href="voorwaarden.html">algemene voorwaarden</a>.</p>
+    </div>
+
+    <div class="blk" data-lang="en">
+      <div class="box">
+        HybridFuelCo's plans and guides give <strong>general nutrition guidance</strong> based on common formulas. They are <strong>not medical, dietary or therapeutic advice</strong> and are no substitute for it.
+      </div>
+
+      <h2>Estimates, not certainties</h2>
+      <p>Calories and macros in our plans are <strong>estimates</strong>, calculated from the information you provide. Everybody's body and needs differ. Use the plans as a guide, listen to your body and adjust where needed.</p>
+
+      <h2>Consult a professional</h2>
+      <p>Talk to a doctor or dietitian before starting any new nutrition or training plan — especially if:</p>
+      <ul>
+        <li>you have a medical condition or take medication;</li>
+        <li>you are pregnant or breastfeeding;</li>
+        <li>you are under 18;</li>
+        <li>you have a history of disordered eating or a difficult relationship with food.</li>
+      </ul>
+      <p>If you notice any complaints while following a plan, stop and consult a professional.</p>
+
+      <h2>Allergies and intolerances</h2>
+      <p>You are responsible for checking ingredients for allergens or intolerances. Adjust meals wherever that is necessary for you.</p>
+
+      <h2>Your own responsibility</h2>
+      <p>Drink enough water, make changes gradually and don't force anything. The choices you make based on our plans remain your own responsibility. See also our <a href="voorwaarden.html">terms &amp; conditions</a>.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fb">HYBRIDFUEL<span>CO</span></div>
+    <div class="flinks">
+      <a href="index.html"><span data-lang="nl">Home</span><span data-lang="en">Home</span></a>
+      <a href="voorwaarden.html"><span data-lang="nl">Algemene voorwaarden</span><span data-lang="en">Terms</span></a>
+      <a href="herroeping.html"><span data-lang="nl">Herroeping &amp; retour</span><span data-lang="en">Withdrawal &amp; refunds</span></a>
+      <a href="privacy.html"><span data-lang="nl">Privacy</span><span data-lang="en">Privacy</span></a>
+      <a href="disclaimer.html"><span data-lang="nl">Disclaimer</span><span data-lang="en">Disclaimer</span></a>
+    </div>
+    <div class="biz">
+      HybridFuelCo · KvK 42199312 · BTW volgt<br>
+      hybridfuelco@gmail.com · Nederland
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.classList.remove('nl','en');
+    document.body.classList.add(l);
+    document.documentElement.lang=l;
+    document.getElementById('fnl').classList.toggle('on',l==='nl');
+    document.getElementById('fen').classList.toggle('on',l==='en');
+  }
+</script>
+</body>
+</html>
