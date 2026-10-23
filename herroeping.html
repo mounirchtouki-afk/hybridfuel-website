@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Herroeping &amp; Retour — HybridFuelCo</title>
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#0A0A0A" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+  :root{--black:#0A0A0A;--black2:#121212;--white:#FFFFFF;--red:#E8321E;--red2:#FF4B37;--muted:#9a9a9a;--line:#242424}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--black);color:#e9e9e9;font-family:Inter,sans-serif;line-height:1.72;-webkit-font-smoothing:antialiased}
+  .disp{font-family:Archivo,sans-serif}
+  a{color:inherit}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .navin{max-width:980px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:16px}
+  .brand{display:flex;align-items:center;gap:11px;flex:1}
+  .brand .mark{width:28px;height:28px;border-radius:7px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:Archivo;font-weight:800;color:#fff;font-size:16px}
+  .brand .name{font-family:Archivo;font-weight:800;font-size:17px;letter-spacing:-.3px}
+  .brand .name span{color:var(--red)}
+  .back{color:var(--muted);font-size:13.5px;font-weight:500;transition:color .2s;text-decoration:none}
+  .back:hover{color:#fff}
+  .flags{display:flex;gap:4px}
+  .flag{cursor:pointer;padding:3px 5px;border-radius:6px;border:1px solid transparent;opacity:.45;line-height:0;transition:opacity .2s}
+  .flag.on{opacity:1;border-color:var(--red);background:rgba(232,50,30,.12)}
+  header.top{padding:62px 0 30px;border-bottom:1px solid var(--line)}
+  .eyebrow{color:var(--red);font-size:13px;font-weight:600;letter-spacing:.5px;margin-bottom:12px}
+  h1{font-family:Archivo;font-weight:900;font-size:clamp(32px,6vw,52px);letter-spacing:-1.3px;line-height:1.02}
+  .updated{color:var(--muted);font-size:13px;margin-top:16px}
+  main{padding:40px 0 20px}
+  h2{font-family:Archivo;font-weight:800;font-size:21px;letter-spacing:-.4px;margin:38px 0 12px;color:#fff}
+  h2:first-child{margin-top:0}
+  p{margin:0 0 14px;font-size:15.5px}
+  ul{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:8px;font-size:15.5px}
+  strong{color:#fff;font-weight:600}
+  .lead{color:var(--muted);font-size:16px;margin-bottom:28px}
+  .box{border-left:2px solid var(--red);background:var(--black2);padding:16px 20px;border-radius:0 10px 10px 0;margin:4px 0 22px;font-size:14.5px;color:#d8d8d8}
+  footer{padding:40px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px;margin-top:30px}
+  .flinks{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:18px}
+  .flinks a{color:var(--muted);text-decoration:none;transition:color .2s}
+  .flinks a:hover{color:#fff}
+  .fb{font-family:Archivo;font-weight:800;font-size:16px;color:#fff;margin-bottom:8px;letter-spacing:-.3px}
+  .fb span{color:var(--red)}
+  .biz{line-height:1.9}
+  .ph{color:var(--red2);font-weight:600}
+  [data-lang]{display:none}
+  body.nl [data-lang="nl"]{display:revert}
+  body.en [data-lang="en"]{display:revert}
+  .blk[data-lang]{display:none}
+  body.nl .blk[data-lang="nl"]{display:block}
+  body.en .blk[data-lang="en"]{display:block}
+</style>
+</head>
+<body class="en">
+
+<nav>
+  <div class="navin">
+    <a class="brand" href="index.html">
+      <div class="mark">H</div>
+      <div class="name">HYBRIDFUEL<span>CO</span></div>
+    </a>
+    <a class="back" href="index.html"><span data-lang="nl">← Terug naar site</span><span data-lang="en">← Back to site</span></a>
+    <div class="flags">
+      <div class="flag" id="fnl" onclick="setLang('nl')" title="Nederlands"><svg width="22" height="15" viewBox="0 0 9 6"><rect width="9" height="6" fill="#fff"/><rect width="9" height="2" fill="#AE1C28"/><rect y="4" width="9" height="2" fill="#21468B"/></svg></div>
+      <div class="flag on" id="fen" onclick="setLang('en')" title="English"><svg width="22" height="15" viewBox="0 0 60 30"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/></svg></div>
+    </div>
+  </div>
+</nav>
+
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow" data-lang="nl">Juridisch</div><div class="eyebrow" data-lang="en">Legal</div>
+    <h1 class="disp" data-lang="nl">Herroeping &amp; retour</h1>
+    <h1 class="disp" data-lang="en">Withdrawal &amp; refunds</h1>
+    <div class="updated" data-lang="nl">Laatst bijgewerkt: oktober 2026</div>
+    <div class="updated" data-lang="en">Last updated: October 2026</div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="blk" data-lang="nl">
+      <p class="lead">Wij verkopen digitale producten die direct na betaling worden geleverd. Daarom gelden er voor herroeping (het "bedenktijd"-recht) speciale regels. Hieronder leggen we ze duidelijk uit.</p>
+
+      <h2>Het wettelijke herroepingsrecht</h2>
+      <p>Normaal heb je als consument 14 dagen bedenktijd om een online aankoop zonder opgaaf van reden te annuleren. Voor <strong>digitale producten</strong> geldt hierop een wettelijke uitzondering.</p>
+
+      <h2>Uitzondering voor digitale producten</h2>
+      <div class="box">
+        Omdat onze schema's en gidsen <strong>direct digitaal geleverd</strong> worden, vragen wij je bij het afrekenen uitdrukkelijk akkoord te gaan met onmiddellijke levering. Daarbij erken je dat je je <strong>herroepingsrecht verliest</strong> zodra de levering begint. Dit is wettelijk toegestaan (artikel 6:230p sub g Burgerlijk Wetboek).
+      </div>
+      <p>Concreet: zodra je betaling rond is en je het bestand of de toegang hebt ontvangen, kun je de aankoop niet meer herroepen en vindt er geen terugbetaling plaats.</p>
+
+      <h2>Wanneer we je wél helpen</h2>
+      <p>Een eerlijke regel hoort erbij. Je krijgt altijd een oplossing of terugbetaling als:</p>
+      <ul>
+        <li>je door een technisch probleem je product <strong>niet hebt ontvangen</strong>;</li>
+        <li>het geleverde bestand <strong>beschadigd of onbruikbaar</strong> is;</li>
+        <li>je per ongeluk <strong>dubbel</strong> hebt betaald.</li>
+      </ul>
+      <p>Mail in die gevallen naar <strong>hybridfuelco@gmail.com</strong> met je bestelgegevens. We reageren binnen enkele werkdagen.</p>
+
+      <h2>Vragen vooraf?</h2>
+      <p>Twijfel je of een plan bij je past? Stel je vraag gerust vóór je bestelt via <strong>hybridfuelco@gmail.com</strong> — dan voorkomen we teleurstelling achteraf.</p>
+    </div>
+
+    <div class="blk" data-lang="en">
+      <p class="lead">We sell digital products that are delivered immediately after payment. That is why special rules apply to withdrawal (the "cooling-off" right). We explain them clearly below.</p>
+
+      <h2>The statutory right of withdrawal</h2>
+      <p>Normally, as a consumer you have a 14-day cooling-off period to cancel an online purchase without giving a reason. For <strong>digital products</strong> there is a statutory exception to this.</p>
+
+      <h2>Exception for digital products</h2>
+      <div class="box">
+        Because our plans and guides are <strong>delivered digitally and immediately</strong>, at checkout we ask you to expressly agree to immediate delivery. In doing so you acknowledge that you <strong>lose your right of withdrawal</strong> once delivery begins. This is permitted by law (Article 6:230p(g) of the Dutch Civil Code).
+      </div>
+      <p>In practice: once your payment is completed and you have received the file or access, the purchase can no longer be withdrawn and no refund is given.</p>
+
+      <h2>When we do help you</h2>
+      <p>A fair rule belongs here too. You always get a solution or refund if:</p>
+      <ul>
+        <li>a technical problem meant you <strong>did not receive</strong> your product;</li>
+        <li>the delivered file is <strong>corrupt or unusable</strong>;</li>
+        <li>you accidentally paid <strong>twice</strong>.</li>
+      </ul>
+      <p>In those cases email <strong>hybridfuelco@gmail.com</strong> with your order details. We respond within a few business days.</p>
+
+      <h2>Questions beforehand?</h2>
+      <p>Not sure a plan fits you? Feel free to ask before you order at <strong>hybridfuelco@gmail.com</strong> — that way we avoid disappointment afterward.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fb">HYBRIDFUEL<span>CO</span></div>
+    <div class="flinks">
+      <a href="index.html"><span data-lang="nl">Home</span><span data-lang="en">Home</span></a>
+      <a href="voorwaarden.html"><span data-lang="nl">Algemene voorwaarden</span><span data-lang="en">Terms</span></a>
+      <a href="herroeping.html"><span data-lang="nl">Herroeping &amp; retour</span><span data-lang="en">Withdrawal &amp; refunds</span></a>
+      <a href="privacy.html"><span data-lang="nl">Privacy</span><span data-lang="en">Privacy</span></a>
+      <a href="disclaimer.html"><span data-lang="nl">Disclaimer</span><span data-lang="en">Disclaimer</span></a>
+    </div>
+    <div class="biz">
+      HybridFuelCo · KvK 42199312 · BTW volgt<br>
+      hybridfuelco@gmail.com · Nederland
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.classList.remove('nl','en');
+    document.body.classList.add(l);
+    document.documentElement.lang=l;
+    document.getElementById('fnl').classList.toggle('on',l==='nl');
+    document.getElementById('fen').classList.toggle('on',l==='en');
+    try{localStorage.setItem('hf_lang',l);}catch(e){}
+  }
+  (function(){var s=null;try{s=localStorage.getItem('hf_lang');}catch(e){}if(s==='nl'||s==='en')setLang(s);})();
+</script>
+</body>
+</html>
