@@ -1,0 +1,12 @@
+# HybridFuelCo — robots.txt
+User-agent: *
+Allow: /
+
+# Betaalde productbestanden niet indexeren (directe toegang blijft mogelijk;
+# echte afscherming komt later via token-beveiligde downloads)
+Disallow: /hyrox-guide-en.pdf
+Disallow: /hyrox-guide-nl.pdf
+Disallow: /tracker-en.xlsx
+Disallow: /tracker-nl.xlsx
+
+Sitemap: https://hybridfuelco.com/sitemap.xml
