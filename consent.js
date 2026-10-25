@@ -74,7 +74,7 @@
     rej.setAttribute("style", "background:transparent;color:#e9e9e9;border:1px solid #242424;padding:9px 18px;border-radius:8px;font-weight:600;cursor:pointer;font-family:inherit");
     var acc = document.createElement("button");
     acc.textContent = t.accept;
-    acc.setAttribute("style", "background:#E8321E;color:#fff;border:none;padding:9px 22px;border-radius:8px;font-weight:700;cursor:pointer;font-family:inherit");
+    acc.setAttribute("style", "background:#E11D48;color:#fff;border:none;padding:9px 22px;border-radius:8px;font-weight:700;cursor:pointer;font-family:inherit");
     rej.onclick = function () { setConsent("rejected"); bar.parentNode && bar.parentNode.removeChild(bar); };
     acc.onclick = function () { setConsent("accepted"); bar.parentNode && bar.parentNode.removeChild(bar); loadAll(); };
     bar.appendChild(txt); bar.appendChild(rej); bar.appendChild(acc);
