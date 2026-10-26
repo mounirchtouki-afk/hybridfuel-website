@@ -13,24 +13,23 @@
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:site_name" content="HybridFuelCo" />
 <!-- ====================== SEO ====================== -->
-<title>HybridFuelCo — Persoonlijke voedingsschema's voor Hyrox & hybrid training</title>
-<meta name="description" content="Een persoonlijk voedingsschema op jouw doelen, met exacte gewichten en boodschappenlijst. Voor Hyrox en hybrid athletes. Bedacht door een kok die zelf traint." />
-<meta name="keywords" content="voedingsschema, Hyrox, hybrid training, meal plan, macro's, sportvoeding, krachttraining, hardlopen" />
+<title>HybridFuelCo — Voeding & training-app voor Hyrox & hybrid athletes</title>
+<meta name="description" content="Een persoonlijk voedingsschema, 100+ recepten, trainingslogboek en Hyrox-racedagplan in één app. Op jouw macro's, met exacte gewichten en boodschappenlijst. Gratis beginnen; Basis €9,95 en Pro €14,95 per maand. Bedacht door een kok die zelf traint." />
+<meta name="keywords" content="voedingsschema, Hyrox, hybrid training, meal plan, macro's, sportvoeding, krachttraining, hardlopen, trainingsapp, racedag voeding" />
 <meta name="robots" content="index, follow" />
 <meta name="theme-color" content="#0A0A0A" />
-<!-- Vervang dit door je echte domein zodra je het hebt: -->
 <link rel="canonical" href="https://hybridfuelco.com/" />
 
 <!-- Social preview (WhatsApp, Instagram, Facebook, LinkedIn) -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="HybridFuelCo — Voeding die het werk bijbeent" />
-<meta property="og:description" content="Persoonlijk voedingsschema voor Hyrox & hybrid athletes. Exacte gewichten, boodschappenlijst, gemaakt door een kok die traint." />
+<meta property="og:description" content="Persoonlijk voedingsschema, recepten, training en racedagplan voor Hyrox & hybrid athletes. Exacte gewichten, boodschappenlijst, gemaakt door een kok die traint." />
 <meta property="og:url" content="https://hybridfuelco.com/" />
 <meta property="og:image" content="https://hybridfuelco.com/social-preview.jpg" />
 <meta property="og:locale" content="nl_NL" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="HybridFuelCo — Voeding die het werk bijbeent" />
-<meta name="twitter:description" content="Persoonlijk voedingsschema voor Hyrox & hybrid athletes." />
+<meta name="twitter:description" content="Voeding, recepten, training en racedagplan voor Hyrox & hybrid athletes." />
 <meta name="twitter:image" content="https://hybridfuelco.com/social-preview.jpg" />
 
 <!-- Zoekmachine-structuur: vertelt Google wat dit is -->
@@ -41,7 +40,7 @@
   "name": "HybridFuelCo",
   "url": "https://hybridfuelco.com/",
   "logo": "https://hybridfuelco.com/icon-512.png",
-  "description": "Persoonlijke voedingsschema's voor Hyrox en hybrid athletes.",
+  "description": "Voeding- en training-app voor Hyrox en hybrid athletes.",
   "email": "hybridfuelco@gmail.com",
   "sameAs":["https://www.instagram.com/hybrid_fuel_co/","https://www.facebook.com/profile.php?id=61595576860978"]
 }
@@ -49,18 +48,17 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebSite",
+  "@type": "SoftwareApplication",
   "name": "HybridFuelCo",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Web, iOS, Android (PWA)",
   "url": "https://hybridfuelco.com/",
-  "inLanguage": [
-    "en",
-    "nl"
-  ],
-  "publisher": {
-    "@type": "Organization",
-    "name": "HybridFuelCo",
-    "logo": "https://hybridfuelco.com/icon-512.png"
-  }
+  "description": "Persoonlijk voedingsschema, receptenbibliotheek, trainingslogboek en Hyrox-racedagplan voor hybrid athletes.",
+  "offers": [
+    { "@type": "Offer", "name": "Gratis", "price": "0", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Basis", "price": "9.95", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Pro", "price": "14.95", "priceCurrency": "EUR" }
+  ]
 }
   </script>
 <!-- ================================================= -->
@@ -69,6 +67,7 @@
   :root{
     --black:#0A0A0A; --black2:#121212; --panel:#171717; --white:#FFFFFF;
     --red:#E11D48; --red2:#FB7185; --muted:#8C8C8C; --line:#242424; --faint:#1C1C1C;
+    --sage:#8FA98F;
     --ease:cubic-bezier(.22,1,.36,1);
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -86,20 +85,23 @@
   /* NAV */
   nav{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
   .navin{max-width:1040px;margin:0 auto;padding:15px 24px;display:flex;align-items:center;gap:16px}
-  .brand{display:flex;align-items:center;gap:11px;flex:1}
-  .brand .mark{width:30px;height:30px;border-radius:7px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:Archivo;font-weight:800;color:var(--white);font-size:17px}
-  .brand .name{font-family:Archivo;font-weight:800;font-size:18px;letter-spacing:-.3px}
+  .brand{display:flex;align-items:center;gap:11px;flex:1;min-width:0}
+  .brand .mark{width:30px;height:30px;border-radius:7px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:Archivo;font-weight:800;color:var(--white);font-size:17px;flex-shrink:0}
+  .brand .name{font-family:Archivo;font-weight:800;font-size:18px;letter-spacing:-.3px;white-space:nowrap}
   .brand .name span{color:var(--red)}
-  .navlinks{display:none;gap:26px;font-size:14px;font-weight:500}
+  .navlinks{display:none;gap:24px;font-size:14px;font-weight:500}
   .navlinks a{color:var(--muted);transition:color .2s}
   .navlinks a:hover{color:var(--white)}
-  @media(min-width:780px){.navlinks{display:flex}}
+  @media(min-width:860px){.navlinks{display:flex}}
+  .navcta{display:none;font-family:Archivo;font-weight:700;font-size:13px;background:var(--red);color:#fff;padding:9px 16px;border-radius:8px;transition:background .2s}
+  .navcta:hover{background:var(--red2)}
+  @media(min-width:560px){.navcta{display:inline-flex}}
   .flags{display:flex;gap:4px}
-  .flag{font-size:17px;cursor:pointer;padding:3px 5px;border-radius:6px;border:1px solid transparent;opacity:.45;line-height:1;transition:opacity .2s}
+  .flag{cursor:pointer;padding:3px 5px;border-radius:6px;border:1px solid transparent;opacity:.45;line-height:0;transition:opacity .2s}
   .flag.on{opacity:1;border-color:var(--red);background:rgba(225,29,72,.12)}
 
   /* HERO */
-  .hero{position:relative;padding:92px 0 72px;overflow:hidden}
+  .hero{position:relative;padding:86px 0 64px;overflow:hidden}
   .glow{position:absolute;inset:0;pointer-events:none;z-index:0}
   .glow::before{content:"";position:absolute;width:680px;height:680px;right:-200px;top:-220px;border-radius:50%;
     background:radial-gradient(circle,rgba(225,29,72,.22),transparent 60%);animation:drift 14s ease-in-out infinite alternate}
@@ -108,70 +110,135 @@
   .kicker{display:inline-flex;align-items:center;gap:9px;color:var(--muted);font-size:13px;font-weight:600;letter-spacing:.5px;margin-bottom:24px}
   .kicker .d{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(225,29,72,.6);animation:pulse 2.4s infinite}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(225,29,72,.5)}70%{box-shadow:0 0 0 10px rgba(225,29,72,0)}100%{box-shadow:0 0 0 0 rgba(225,29,72,0)}}
-  h1.big{font-family:Archivo;font-weight:900;font-size:clamp(44px,9vw,92px);line-height:.95;letter-spacing:-2px;max-width:15ch}
+  h1.big{font-family:Archivo;font-weight:900;font-size:clamp(42px,8.4vw,86px);line-height:.95;letter-spacing:-2px;max-width:15ch}
   h1.big .line{display:block;overflow:hidden}
   h1.big .line>span{display:block;transform:translateY(105%);animation:rise .9s var(--ease) forwards}
   h1.big .line:nth-child(2)>span{animation-delay:.12s}
   h1.big .line:nth-child(3)>span{animation-delay:.24s}
   h1.big em{color:var(--red);font-style:normal}
   @keyframes rise{to{transform:none}}
-  .lead{color:var(--muted);font-size:clamp(16px,2.2vw,19px);max-width:50ch;margin-top:26px;opacity:0;animation:fadein .8s ease .5s forwards}
+  .lead{color:var(--muted);font-size:clamp(16px,2.2vw,19px);max-width:52ch;margin-top:24px;opacity:0;animation:fadein .8s ease .5s forwards}
   @keyframes fadein{to{opacity:1}}
-  .cta-row{display:flex;flex-wrap:wrap;gap:13px;margin-top:36px;opacity:0;animation:fadein .8s ease .68s forwards}
+  .cta-row{display:flex;flex-wrap:wrap;gap:13px;margin-top:34px;opacity:0;animation:fadein .8s ease .68s forwards}
   .btn{display:inline-flex;align-items:center;justify-content:center;font-family:Archivo;font-weight:700;font-size:14.5px;letter-spacing:.2px;padding:15px 28px;border-radius:9px;cursor:pointer;transition:transform .18s var(--ease),background .18s,border-color .18s,color .18s;position:relative;overflow:hidden}
   .btn:active{transform:scale(.97)}
   .btn.solid{background:var(--red);color:var(--white)}
   .btn.solid:hover{background:var(--red2);transform:translateY(-2px)}
   .btn.line{border:1px solid var(--line);color:var(--white)}
   .btn.line:hover{border-color:var(--white);transform:translateY(-2px)}
+  .hero-note{color:var(--muted);font-size:13px;margin-top:16px;opacity:0;animation:fadein .8s ease .8s forwards}
 
-  section{padding:76px 0;border-top:1px solid var(--line)}
+  /* TRUST STRIP */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--black2)}
+  .trust .wrap{display:flex;flex-wrap:wrap;gap:10px 26px;padding:18px 24px;justify-content:center;align-items:center}
+  .trust .ti{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:13px;font-weight:500}
+  .trust .ti svg{color:var(--red);flex-shrink:0}
+
+  section{padding:72px 0;border-top:1px solid var(--line)}
   .eyebrow{color:var(--red);font-size:13px;font-weight:600;letter-spacing:.5px;margin-bottom:14px}
   h2{font-family:Archivo;font-weight:800;font-size:clamp(28px,4.6vw,44px);letter-spacing:-1px;line-height:1.03}
-  .sub{color:var(--muted);max-width:56ch;margin-top:15px;font-size:16px}
+  .sub{color:var(--muted);max-width:58ch;margin-top:15px;font-size:16px}
 
-  /* WHO */
-  .who-grid{display:grid;grid-template-columns:1fr;gap:1px;margin-top:40px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-  @media(min-width:760px){.who-grid{grid-template-columns:repeat(3,1fr)}}
-  .who{background:var(--black);padding:30px;transition:background .25s}
-  .who:hover{background:var(--black2)}
-  .who .num{font-family:Archivo;font-weight:800;font-size:15px;color:var(--red);margin-bottom:16px}
-  .who h3{font-family:Archivo;font-weight:700;font-size:20px;margin-bottom:9px;letter-spacing:-.3px}
-  .who p{color:var(--muted);font-size:14.5px}
+  /* PILLARS */
+  .pillars{display:grid;grid-template-columns:1fr;gap:1px;margin-top:40px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  @media(min-width:760px){.pillars{grid-template-columns:repeat(3,1fr)}}
+  .pil{background:var(--black);padding:30px;transition:background .25s}
+  .pil:hover{background:var(--black2)}
+  .pil .ic{width:40px;height:40px;border-radius:10px;background:rgba(225,29,72,.12);display:flex;align-items:center;justify-content:center;color:var(--red);margin-bottom:16px}
+  .pil h3{font-family:Archivo;font-weight:700;font-size:20px;margin-bottom:9px;letter-spacing:-.3px}
+  .pil p{color:var(--muted);font-size:14.5px}
 
-  /* APP */
-  .app-band{display:grid;grid-template-columns:1fr;gap:40px;align-items:center;margin-top:12px}
-  @media(min-width:820px){.app-band{grid-template-columns:1.05fr .95fr}}
-  .app-feats{list-style:none;margin:26px 0 32px;display:flex;flex-direction:column;gap:14px}
-  .app-feats li{padding-left:28px;position:relative;font-size:15.5px}
-  .app-feats li::before{content:"";position:absolute;left:0;top:8px;width:12px;height:2px;background:var(--red)}
-  .phone{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:0 40px 80px -40px rgba(0,0,0,.9);transition:transform .4s var(--ease)}
-  .phone:hover{transform:translateY(-6px)}
-  .ph-top{display:flex;align-items:center;gap:10px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:16px}
-  .ph-top .dot{width:26px;height:26px;border-radius:6px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:Archivo;font-weight:800;color:#fff;font-size:15px}
-  .macrorow{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:16px}
+  /* STEPS */
+  .steps{display:grid;grid-template-columns:1fr;gap:16px;margin-top:40px;counter-reset:st}
+  @media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+  .step{background:var(--black2);border:1px solid var(--line);border-radius:16px;padding:28px;position:relative}
+  .step .n{font-family:Archivo;font-weight:900;font-size:40px;color:var(--faint);line-height:1;letter-spacing:-2px;-webkit-text-stroke:1px var(--line)}
+  .step h3{font-family:Archivo;font-weight:700;font-size:18px;margin:12px 0 8px;letter-spacing:-.3px}
+  .step p{color:var(--muted);font-size:14px}
+
+  /* FEATURE ROWS */
+  .feat-row{display:grid;grid-template-columns:1fr;gap:34px;align-items:center;margin-top:56px}
+  .feat-row:first-of-type{margin-top:44px}
+  @media(min-width:860px){
+    .feat-row{grid-template-columns:1.02fr .98fr;gap:52px}
+    .feat-row.flip .fr-text{order:2}
+    .feat-row.flip .fr-vis{order:1}
+  }
+  .fr-text .fr-eye{color:var(--red);font-size:12.5px;font-weight:600;letter-spacing:.5px;margin-bottom:12px}
+  .fr-text h3{font-family:Archivo;font-weight:800;font-size:clamp(23px,3.2vw,30px);letter-spacing:-.6px;line-height:1.08}
+  .fr-text p{color:var(--muted);font-size:15.5px;margin-top:14px}
+  .fr-feats{list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:11px}
+  .fr-feats li{padding-left:26px;position:relative;font-size:14.5px;color:#d6d6d6}
+  .fr-feats li::before{content:"";position:absolute;left:0;top:9px;width:12px;height:2px;background:var(--red)}
+  .tierbadge{display:inline-block;font-family:Archivo;font-weight:700;font-size:10.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--red);border:1px solid var(--red);border-radius:30px;padding:3px 11px;margin-top:18px}
+
+  /* mockups */
+  .mock{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 40px 80px -42px rgba(0,0,0,.9);transition:transform .4s var(--ease)}
+  .mock:hover{transform:translateY(-6px)}
+  .mk-top{display:flex;align-items:center;gap:10px;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:14px}
+  .mk-top .dot{width:26px;height:26px;border-radius:6px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:Archivo;font-weight:800;color:#fff;font-size:15px}
+  .mk-ttl{font-family:Archivo;font-weight:800;font-size:13px;letter-spacing:-.2px;color:var(--muted);text-transform:uppercase}
+  .macrorow{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:14px}
   .macro{background:var(--black);border-radius:10px;padding:11px 12px;border-bottom:2px solid var(--red)}
   .macro .k{font-size:9px;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);font-weight:600}
   .macro .v{font-family:Archivo;font-weight:700;font-size:19px;margin-top:2px}
-  .mealline{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--faint);font-size:13px}
+  .mealline{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--faint);font-size:13px}
   .mealline:last-child{border-bottom:none}
   .mealline .t{color:var(--red);font-size:9px;letter-spacing:.5px;text-transform:uppercase;font-weight:700;margin-bottom:1px}
+  .mealline .g{color:var(--muted);font-size:11px}
+  /* recipe mini cards */
+  .rcard-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .rcard{background:var(--black);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .rcard .im{height:58px;background:linear-gradient(135deg,#2a1116,#0e0e0e);display:flex;align-items:flex-end;padding:7px;position:relative}
+  .rcard .cat{font-family:Archivo;font-weight:700;font-size:8px;letter-spacing:.4px;text-transform:uppercase;color:#fff;background:var(--red);border-radius:4px;padding:1px 6px}
+  .rcard .nm{font-size:11px;font-weight:600;padding:7px 8px 8px;line-height:1.25}
+  /* exercise rows */
+  .exrow{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--faint);font-size:13px}
+  .exrow:last-child{border-bottom:none}
+  .exrow .kc{font-family:Archivo;font-weight:700;color:var(--red);font-size:13px}
+  .exrow .mn{color:var(--muted);font-size:11px}
+  /* tracking */
+  .ringrow{display:flex;align-items:center;gap:16px;margin-bottom:12px}
+  .ring{width:72px;height:72px;border-radius:50%;flex-shrink:0;background:conic-gradient(var(--red) 0 72%,var(--faint) 72% 100%);display:flex;align-items:center;justify-content:center}
+  .ring .in{width:56px;height:56px;border-radius:50%;background:var(--panel);display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .ring .in b{font-family:Archivo;font-weight:800;font-size:16px}
+  .ring .in span{font-size:8px;color:var(--muted);letter-spacing:.5px}
+  .statbox{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .stat{background:var(--black);border-radius:9px;padding:9px 11px;border-bottom:2px solid var(--sage)}
+  .stat .k{font-size:8.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .stat .v{font-family:Archivo;font-weight:700;font-size:16px;margin-top:1px}
 
-  /* PLANS */
-  .plans{display:grid;grid-template-columns:1fr;gap:18px;margin-top:40px}
-  @media(min-width:680px){.plans{grid-template-columns:1fr 1fr}}
-  .plan-single{margin-top:40px;max-width:420px}
-  .next-step{color:var(--muted);font-size:14.5px;margin-top:22px;max-width:52ch}
-  .plan{background:var(--black2);border:1px solid var(--line);border-radius:18px;padding:32px;display:flex;flex-direction:column;transition:transform .3s var(--ease),border-color .3s}
-  .plan:hover{transform:translateY(-4px);border-color:#333}
-  .plan.feat{border-color:var(--red);background:linear-gradient(180deg,rgba(225,29,72,.06),transparent 40%)}
-  .plan .tag{align-self:flex-start;background:var(--red);color:#fff;font-family:Archivo;font-weight:700;font-size:11px;letter-spacing:.5px;text-transform:uppercase;padding:5px 12px;border-radius:30px;margin-bottom:16px}
-  .plan h3{font-family:Archivo;font-weight:700;font-size:21px;letter-spacing:-.3px}
-  .plan .price{font-family:Archivo;font-weight:800;font-size:46px;letter-spacing:-1.5px;margin:12px 0 2px}
-  .plan .price small{font-size:15px;color:var(--muted);font-weight:400;letter-spacing:0}
-  .plan ul{list-style:none;margin:20px 0 28px;display:flex;flex-direction:column;gap:10px}
-  .plan li{font-size:14.5px;padding-left:26px;position:relative;color:#d6d6d6}
-  .plan li::before{content:"✓";position:absolute;left:0;color:var(--red);font-weight:800}
+  /* PRICING */
+  .toggle-wrap{display:flex;justify-content:center;margin-top:34px}
+  .toggle{display:inline-flex;background:var(--black2);border:1px solid var(--line);border-radius:30px;padding:4px;gap:4px}
+  .toggle button{font-family:Archivo;font-weight:700;font-size:13px;color:var(--muted);background:transparent;border:none;cursor:pointer;padding:9px 18px;border-radius:30px;transition:background .2s,color .2s;white-space:nowrap}
+  .toggle button.on{background:var(--red);color:#fff}
+  .save-badge{color:var(--sage);font-size:12px;font-weight:600;margin-left:6px}
+  .tiers{display:grid;grid-template-columns:1fr;gap:18px;margin-top:30px}
+  @media(min-width:780px){.tiers{grid-template-columns:repeat(3,1fr);align-items:stretch}}
+  .tier{background:var(--black2);border:1px solid var(--line);border-radius:18px;padding:30px;display:flex;flex-direction:column;transition:transform .3s var(--ease),border-color .3s}
+  .tier:hover{transform:translateY(-4px);border-color:#333}
+  .tier.feat{border-color:var(--red);background:linear-gradient(180deg,rgba(225,29,72,.06),transparent 42%)}
+  .tier .tag{align-self:flex-start;background:var(--red);color:#fff;font-family:Archivo;font-weight:700;font-size:10.5px;letter-spacing:.5px;text-transform:uppercase;padding:5px 12px;border-radius:30px;margin-bottom:14px}
+  .tier h3{font-family:Archivo;font-weight:700;font-size:20px;letter-spacing:-.3px}
+  .tier .price{font-family:Archivo;font-weight:800;font-size:40px;letter-spacing:-1.5px;margin:12px 0 2px}
+  .tier .price small{font-size:14px;color:var(--muted);font-weight:400;letter-spacing:0}
+  .tier .pricesub{color:var(--muted);font-size:12.5px;min-height:18px}
+  .tier ul{list-style:none;margin:20px 0 26px;display:flex;flex-direction:column;gap:9px;flex:1}
+  .tier li{font-size:14px;padding-left:24px;position:relative;color:#d6d6d6}
+  .tier li::before{content:"✓";position:absolute;left:0;color:var(--red);font-weight:800}
+  .tier li.muted{color:var(--muted)}
+  .tier li.muted::before{content:"–";color:var(--muted)}
+  .py{display:none}
+  body.bill-yr .pm{display:none}
+  body.bill-yr .py{display:revert}
+  .oneoff{margin-top:26px;background:var(--black2);border:1px dashed var(--line);border-radius:16px;padding:24px 26px;display:grid;grid-template-columns:1fr;gap:14px;align-items:center}
+  @media(min-width:680px){.oneoff{grid-template-columns:1fr auto}}
+  .oneoff h4{font-family:Archivo;font-weight:700;font-size:16px;letter-spacing:-.2px}
+  .oneoff p{color:var(--muted);font-size:13.5px;margin-top:5px}
+  .oneoff .obtns{display:flex;flex-wrap:wrap;gap:10px}
+  .oneoff .obtns a{font-family:Archivo;font-weight:700;font-size:13px;border:1px solid var(--line);border-radius:9px;padding:11px 16px;white-space:nowrap;transition:border-color .2s}
+  .oneoff .obtns a:hover{border-color:var(--white)}
 
   /* STORY */
   .story{display:grid;grid-template-columns:1fr;gap:30px;align-items:start}
@@ -180,6 +247,16 @@
   .story .bq em{color:var(--red);font-style:normal}
   .story p{color:var(--muted);font-size:15.5px;margin-bottom:15px}
   .story p strong{color:var(--white);font-weight:600}
+
+  /* FAQ */
+  .faq{margin-top:36px;display:flex;flex-direction:column;gap:12px}
+  details.q{background:var(--black2);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  details.q summary{cursor:pointer;list-style:none;padding:18px 20px;font-family:Archivo;font-weight:700;font-size:16px;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  details.q summary::-webkit-details-marker{display:none}
+  details.q summary .pl{color:var(--red);font-size:22px;font-weight:400;transition:transform .25s var(--ease);flex-shrink:0;line-height:1}
+  details.q[open] summary .pl{transform:rotate(45deg)}
+  details.q .a{padding:0 20px 20px;color:var(--muted);font-size:14.5px;line-height:1.65}
+  details.q .a a{color:var(--red2)}
 
   /* BLOG */
   .blog-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:40px}
@@ -190,6 +267,12 @@
   .post h3{font-family:Archivo;font-weight:700;font-size:18px;line-height:1.2;letter-spacing:-.3px;margin-bottom:10px}
   .post p{color:var(--muted);font-size:14px;margin-bottom:16px}
   .post .readmore{font-family:Archivo;font-weight:700;font-size:13px;color:var(--white);border-bottom:2px solid var(--red);padding-bottom:2px}
+
+  /* CLOSING CTA */
+  .closer{text-align:center;background:radial-gradient(120% 140% at 50% 0%,rgba(225,29,72,.12),transparent 60%)}
+  .closer h2{max-width:18ch;margin:0 auto}
+  .closer .sub{margin:15px auto 0}
+  .closer .cta-row{justify-content:center;animation:none;opacity:1}
 
   /* SAFE + FOOTER */
   .safe{border-left:2px solid var(--red);padding:4px 0 4px 20px;color:var(--muted);font-size:13px;line-height:1.8}
@@ -216,11 +299,13 @@
       <div class="name">HYBRIDFUEL<span>CO</span></div>
     </a>
     <div class="navlinks">
-      <a href="#app"><span data-lang="nl">De app</span><span data-lang="en">The app</span></a>
-      <a href="#plans"><span data-lang="nl">Plannen</span><span data-lang="en">Plans</span></a>
-      <a href="#story"><span data-lang="nl">Verhaal</span><span data-lang="en">Story</span></a>
-      <a href="#blog"><span data-lang="nl">Blog</span><span data-lang="en">Blog</span></a>
+      <a href="#functies"><span data-lang="nl">Functies</span><span data-lang="en">Features</span></a>
+      <a href="#prijzen"><span data-lang="nl">Prijzen</span><span data-lang="en">Pricing</span></a>
+      <a href="#verhaal"><span data-lang="nl">Verhaal</span><span data-lang="en">Story</span></a>
+      <a href="#faq">FAQ</a>
+      <a href="#blog">Blog</a>
     </div>
+    <a class="navcta" href="https://app.hybridfuelco.com"><span data-lang="nl">Start gratis</span><span data-lang="en">Start free</span></a>
     <div class="flags">
       <div class="flag" id="fnl" onclick="setLang('nl')" title="Nederlands"><svg width="22" height="15" viewBox="0 0 9 6"><rect width="9" height="6" fill="#fff"/><rect width="9" height="2" fill="#AE1C28"/><rect y="4" width="9" height="2" fill="#21468B"/></svg></div>
       <div class="flag on" id="fen" onclick="setLang('en')" title="English"><svg width="22" height="15" viewBox="0 0 60 30"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/></svg></div>
@@ -239,112 +324,348 @@
     <div class="blk" data-lang="en">
       <h1 class="big"><span class="line"><span>Fuel that keeps</span></span><span class="line"><span>up with</span></span><span class="line"><span><em>the work.</em></span></span></h1>
     </div>
-    <p class="lead" data-lang="nl">Een persoonlijk voedingsschema op jouw doelen — met exacte gewichten en een boodschappenlijst. Bedacht door een kok die zelf traint, niet door een rekenmachine.</p>
-    <p class="lead" data-lang="en">A personal nutrition plan built on your goals — with exact weights and a shopping list. Made by a chef who trains, not a calculator.</p>
+    <p class="lead" data-lang="nl">Eén app voor je voeding én je training: een persoonlijk weekplan met exacte gewichten, 100+ recepten, een trainingslogboek en je Hyrox-racedagplan. Bedacht door een kok die zelf traint — niet door een rekenmachine.</p>
+    <p class="lead" data-lang="en">One app for your food and your training: a personal week plan with exact weights, 100+ recipes, a training log and your Hyrox race-day plan. Made by a chef who trains — not a calculator.</p>
     <div class="cta-row">
-      <a class="btn solid" href="#plans"><span data-lang="nl">Bekijk de plannen</span><span data-lang="en">See the plans</span></a>
-      <a class="btn line" href="#app"><span data-lang="nl">Probeer de app</span><span data-lang="en">Try the app</span></a>
+      <a class="btn solid" href="https://app.hybridfuelco.com"><span data-lang="nl">Start gratis</span><span data-lang="en">Start free</span></a>
+      <a class="btn line" href="#prijzen"><span data-lang="nl">Bekijk de prijzen</span><span data-lang="en">See the pricing</span></a>
     </div>
+    <div class="hero-note" data-lang="nl">Gratis beginnen met de macro-calculator en recepten. Geen betaalgegevens nodig.</div>
+    <div class="hero-note" data-lang="en">Start free with the macro calculator and recipes. No payment details needed.</div>
   </div>
 </header>
 
-<section id="who">
+<!-- TRUST STRIP (eerlijk — geen verzonnen cijfers) -->
+<div class="trust">
   <div class="wrap">
-    <div class="eyebrow rv" data-lang="nl">Voor wie</div>
-    <div class="eyebrow rv" data-lang="en">Who it's for</div>
-    <h2 class="rv" data-lang="nl">Gebouwd voor hybride atleten</h2>
-    <h2 class="rv" data-lang="en">Built for hybrid athletes</h2>
-    <div class="who-grid rv">
-      <div class="who">
-        <div class="num">01</div>
-        <h3 data-lang="nl">Je rent én tilt</h3><h3 data-lang="en">You run and lift</h3>
-        <p data-lang="nl">Hyrox, functional fitness, hybrid training. Je lichaam vraagt om brandstof die past bij twee werelden tegelijk.</p>
-        <p data-lang="en">Hyrox, functional fitness, hybrid training. Your body needs fuel that fits two worlds at once.</p>
+    <div class="ti"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-lang="nl">Gemaakt door een kok die traint</span><span data-lang="en">Made by a chef who trains</span></div>
+    <div class="ti"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-lang="nl">Voor Hyrox &amp; hybride atleten</span><span data-lang="en">For Hyrox &amp; hybrid athletes</span></div>
+    <div class="ti"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-lang="nl">Gram/ounce &amp; kg/lb</span><span data-lang="en">Grams/ounces &amp; kg/lb</span></div>
+    <div class="ti"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-lang="nl">Nederlands &amp; Engels</span><span data-lang="en">Dutch &amp; English</span></div>
+  </div>
+</div>
+
+<!-- PILLARS -->
+<section id="waarom">
+  <div class="wrap">
+    <div class="eyebrow rv" data-lang="nl">Waarom HybridFuelCo</div><div class="eyebrow rv" data-lang="en">Why HybridFuelCo</div>
+    <h2 class="rv" data-lang="nl">Drie dingen waar het op staat</h2>
+    <h2 class="rv" data-lang="en">Three things it stands on</h2>
+    <div class="pillars rv">
+      <div class="pil">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div>
+        <h3 data-lang="nl">Persoonlijk</h3><h3 data-lang="en">Personal</h3>
+        <p data-lang="nl">Berekend op jóuw calorieën, macro's, doel en trainingsdagen. Calorieën gaan omhoog op zware dagen, omlaag op rustdagen.</p>
+        <p data-lang="en">Built on your calories, macros, goal and training days. Calories go up on hard days, down on rest days.</p>
       </div>
-      <div class="who">
-        <div class="num">02</div>
-        <h3 data-lang="nl">Herstel telt zwaar</h3><h3 data-lang="en">Recovery matters</h3>
-        <p data-lang="nl">Herstel en voeding bepalen je progressie. Geen giswerk, maar een plan dat klopt met je lichaam.</p>
-        <p data-lang="en">Recovery and nutrition drive your progress. No guesswork — a plan that fits your body.</p>
+      <div class="pil">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+        <h3 data-lang="nl">Compleet</h3><h3 data-lang="en">Complete</h3>
+        <p data-lang="nl">Eten, 100+ recepten, training, tracking én je racedagplan in één app. Geen vijf losse tools meer.</p>
+        <p data-lang="en">Food, 100+ recipes, training, tracking and your race-day plan in one app. No more five separate tools.</p>
       </div>
-      <div class="who">
-        <div class="num">03</div>
-        <h3 data-lang="nl">Je wilt het simpel</h3><h3 data-lang="en">You want it simple</h3>
-        <p data-lang="nl">Geen app vol toeters. Je stats erin, je plan eruit, met gewichten en een boodschappenlijst. Klaar.</p>
-        <p data-lang="en">No bloated app. Stats in, plan out, with weights and a shopping list. Done.</p>
+      <div class="pil">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3 data-lang="nl">Eerlijk</h3><h3 data-lang="en">Honest</h3>
+        <p data-lang="nl">Maaltijden die kloppen én te maken zijn. Veilige tempo's bewaakt, geen poeders die je per se moet kopen, geen hype.</p>
+        <p data-lang="en">Meals that are correct and actually cookable. Safe rates watched, no powders you're told to buy, no hype.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="app">
+<!-- HOW IT WORKS -->
+<section id="hoe">
   <div class="wrap">
-    <div class="app-band">
-      <div class="rv">
-        <div class="eyebrow" data-lang="nl">De app</div><div class="eyebrow" data-lang="en">The app</div>
-        <h2 data-lang="nl">Jouw plan in één druk op de knop</h2>
-        <h2 data-lang="en">Your plan in a single tap</h2>
-        <ul class="app-feats">
-          <li data-lang="nl">Op jouw calorieën en macro's berekend</li><li data-lang="en">Calculated on your calories and macros</li>
-          <li data-lang="nl">Weeggewichten per maaltijd — geen giswerk</li><li data-lang="en">Weigh-out grams per meal — no guesswork</li>
+    <div class="eyebrow rv" data-lang="nl">Zo werkt het</div><div class="eyebrow rv" data-lang="en">How it works</div>
+    <h2 class="rv" data-lang="nl">Van je doelen naar je plan in 1-2-3</h2>
+    <h2 class="rv" data-lang="en">From your goals to your plan in 1-2-3</h2>
+    <div class="steps rv">
+      <div class="step">
+        <div class="n">1</div>
+        <h3 data-lang="nl">Stel je doelen in</h3><h3 data-lang="en">Set your goals</h3>
+        <p data-lang="nl">Lengte, gewicht, doel, trainingsdagen en je eenheden (gram/ounce, kg/lb). Eenmalig invullen.</p>
+        <p data-lang="en">Height, weight, goal, training days and your units (grams/ounces, kg/lb). Fill in once.</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h3 data-lang="nl">Krijg je plan</h3><h3 data-lang="en">Get your plan</h3>
+        <p data-lang="nl">Een persoonlijk weekplan met gewichten per maaltijd, een boodschappenlijst en je trainingsschema.</p>
+        <p data-lang="en">A personal week plan with weigh-out grams per meal, a shopping list and your training schedule.</p>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h3 data-lang="nl">Volg &amp; pas aan</h3><h3 data-lang="en">Track &amp; adjust</h3>
+        <p data-lang="nl">Log water, gewicht en training, verschuif dagen en pas maaltijden aan — op je telefoon.</p>
+        <p data-lang="en">Log water, weight and training, move days and tweak meals — on your phone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="functies">
+  <div class="wrap">
+    <div class="eyebrow rv" data-lang="nl">De app</div><div class="eyebrow rv" data-lang="en">The app</div>
+    <h2 class="rv" data-lang="nl">Alles wat erin zit</h2>
+    <h2 class="rv" data-lang="en">Everything inside</h2>
+    <p class="sub rv" data-lang="nl">Begin gratis met de calculator en recepten. Ontgrendel de volledige app met Basis, en het aanpasbare werk met Pro.</p>
+    <p class="sub rv" data-lang="en">Start free with the calculator and recipes. Unlock the full app with Basic, and the editable tools with Pro.</p>
+
+    <!-- 1. Weekplan -->
+    <div class="feat-row rv">
+      <div class="fr-text">
+        <div class="fr-eye" data-lang="nl">Weekplan op maat</div><div class="fr-eye" data-lang="en">Personal week plan</div>
+        <h3 data-lang="nl">Je plan in één druk op de knop</h3>
+        <h3 data-lang="en">Your plan in a single tap</h3>
+        <p data-lang="nl">Een weekschema berekend op jouw macro's. Precieze weeggewichten per maaltijd — geen giswerk — met een boodschappenlijst die klopt.</p>
+        <p data-lang="en">A week plan built on your macros. Exact weigh-out grams per meal — no guesswork — with a shopping list that adds up.</p>
+        <ul class="fr-feats">
+          <li data-lang="nl">Calorieën omhoog op trainingsdagen, omlaag op rustdagen</li><li data-lang="en">Calories up on training days, down on rest days</li>
           <li data-lang="nl">Kies hoeveel je afwisselt per week</li><li data-lang="en">Choose how much you vary per week</li>
-          <li data-lang="nl">Boodschappenlijst en Excel-export inbegrepen</li><li data-lang="en">Shopping list and Excel export included</li>
+          <li data-lang="nl">Tussendoortjes ingepland, eiwit hoog gehouden</li><li data-lang="en">Snacks built in, protein kept high</li>
+          <li data-lang="nl">Export naar Excel of Google Sheets</li><li data-lang="en">Export to Excel or Google Sheets</li>
         </ul>
-        <a class="btn solid" href="https://app.hybridfuelco.com"><span data-lang="nl">Open de app</span><span data-lang="en">Open the app</span></a>
+        <span class="tierbadge" data-lang="nl">Basis</span><span class="tierbadge" data-lang="en">Basic</span>
       </div>
-      <div class="phone rv" aria-hidden="true">
-        <div class="ph-top"><div class="dot">H</div><div class="disp" style="font-weight:800;font-size:15px;letter-spacing:-.3px">HYBRIDFUEL<span style="color:var(--red)">CO</span></div></div>
-        <div class="macrorow">
-          <div class="macro"><div class="k" data-lang="nl">Eiwit</div><div class="k" data-lang="en">Protein</div><div class="v"><span class="count" data-to="174">0</span>g</div></div>
-          <div class="macro"><div class="k" data-lang="nl">Koolh.</div><div class="k" data-lang="en">Carbs</div><div class="v"><span class="count" data-to="248">0</span>g</div></div>
-          <div class="macro"><div class="k">Vet</div><div class="v"><span class="count" data-to="78">0</span>g</div></div>
+      <div class="fr-vis">
+        <div class="mock" aria-hidden="true">
+          <div class="mk-top"><div class="dot">H</div><div class="mk-ttl" data-lang="nl">Vandaag · maandag</div><div class="mk-ttl" data-lang="en">Today · Monday</div></div>
+          <div class="macrorow">
+            <div class="macro"><div class="k" data-lang="nl">Eiwit</div><div class="k" data-lang="en">Protein</div><div class="v"><span class="count" data-to="174">0</span>g</div></div>
+            <div class="macro"><div class="k" data-lang="nl">Koolh.</div><div class="k" data-lang="en">Carbs</div><div class="v"><span class="count" data-to="248">0</span>g</div></div>
+            <div class="macro"><div class="k">Vet</div><div class="v"><span class="count" data-to="78">0</span>g</div></div>
+          </div>
+          <div class="mealline"><div><div class="t" data-lang="nl">Ontbijt</div><div class="t" data-lang="en">Breakfast</div><div data-lang="nl">Havermout met kwark</div><div data-lang="en">Oats with quark</div><div class="g">80g havermout · 250g kwark</div></div><div style="color:var(--muted)">520</div></div>
+          <div class="mealline"><div><div class="t">Lunch</div><div data-lang="nl">Rijst met kip</div><div data-lang="en">Rice with chicken</div><div class="g">75g rijst · 150g kip</div></div><div style="color:var(--muted)">610</div></div>
+          <div class="mealline"><div><div class="t" data-lang="nl">Diner</div><div class="t" data-lang="en">Dinner</div><div data-lang="nl">Zalm, zoete aardappel</div><div data-lang="en">Salmon, sweet potato</div><div class="g">150g zalm · 200g aardappel</div></div><div style="color:var(--muted)">640</div></div>
+          <div class="mealline"><div><div class="t">Snack</div><div data-lang="nl">Skyr met noten</div><div data-lang="en">Skyr with nuts</div><div class="g">200g skyr · 20g noten</div></div><div style="color:var(--muted)">260</div></div>
         </div>
-        <div class="mealline"><div><div class="t" data-lang="nl">Ontbijt</div><div class="t" data-lang="en">Breakfast</div><div data-lang="nl">Havermout met kwark</div><div data-lang="en">Oats with quark</div></div><div style="color:var(--muted)">520 kcal</div></div>
-        <div class="mealline"><div><div class="t">Lunch</div><div data-lang="nl">Rijst met kip</div><div data-lang="en">Rice with chicken</div></div><div style="color:var(--muted)">610 kcal</div></div>
-        <div class="mealline"><div><div class="t" data-lang="nl">Diner</div><div class="t" data-lang="en">Dinner</div><div data-lang="nl">Zalm, zoete aardappel</div><div data-lang="en">Salmon, sweet potato</div></div><div style="color:var(--muted)">640 kcal</div></div>
-        <div class="mealline"><div><div class="t">Snack</div><div data-lang="nl">Skyr met noten</div><div data-lang="en">Skyr with nuts</div></div><div style="color:var(--muted)">260 kcal</div></div>
+      </div>
+    </div>
+
+    <!-- 2. Recepten -->
+    <div class="feat-row flip rv">
+      <div class="fr-text">
+        <div class="fr-eye" data-lang="nl">Receptenbibliotheek</div><div class="fr-eye" data-lang="en">Recipe library</div>
+        <h3 data-lang="nl">100+ recepten, doorgerekend</h3>
+        <h3 data-lang="en">100+ recipes, macro-counted</h3>
+        <p data-lang="nl">Ontbijt, lunch, diner en tussendoortjes — met foto, uitleg en voedingswaarde. Sleep ze in je dagen of maak je eigen recepten aan.</p>
+        <p data-lang="en">Breakfast, lunch, dinner and snacks — with photo, description and macros. Drop them into your days or add your own recipes.</p>
+        <ul class="fr-feats">
+          <li data-lang="nl">Vier categorieën, elk ruim gevuld</li><li data-lang="en">Four categories, each well stocked</li>
+          <li data-lang="nl">Eigen recept toevoegen met auto-voedingswaarde</li><li data-lang="en">Add your own recipe with auto macros</li>
+          <li data-lang="nl">Een recept in een dag plaatsen en schalen</li><li data-lang="en">Place a recipe into a day and scale it</li>
+        </ul>
+        <span class="tierbadge" data-lang="nl">Gratis te bekijken · plannen met Basis</span><span class="tierbadge" data-lang="en">Free to browse · plan with Basic</span>
+      </div>
+      <div class="fr-vis">
+        <div class="mock" aria-hidden="true">
+          <div class="mk-top"><div class="dot">H</div><div class="mk-ttl" data-lang="nl">Recepten · 100+</div><div class="mk-ttl" data-lang="en">Recipes · 100+</div></div>
+          <div class="rcard-grid">
+            <div class="rcard"><div class="im"><span class="cat" data-lang="nl">Ontbijt</span><span class="cat" data-lang="en">Breakfast</span></div><div class="nm" data-lang="nl">Skyr met havermout &amp; bessen</div><div class="nm" data-lang="en">Skyr with oats &amp; berries</div></div>
+            <div class="rcard"><div class="im"><span class="cat">Lunch</span></div><div class="nm" data-lang="nl">Kip-teriyaki rijstbowl</div><div class="nm" data-lang="en">Chicken teriyaki rice bowl</div></div>
+            <div class="rcard"><div class="im"><span class="cat" data-lang="nl">Diner</span><span class="cat" data-lang="en">Dinner</span></div><div class="nm" data-lang="nl">Zalm met zoete aardappel</div><div class="nm" data-lang="en">Salmon with sweet potato</div></div>
+            <div class="rcard"><div class="im"><span class="cat">Snack</span></div><div class="nm" data-lang="nl">Kwark met noten &amp; honing</div><div class="nm" data-lang="en">Quark with nuts &amp; honey</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Training -->
+    <div class="feat-row rv">
+      <div class="fr-text">
+        <div class="fr-eye" data-lang="nl">Training</div><div class="fr-eye" data-lang="en">Training</div>
+        <h3 data-lang="nl">Log je training, zie wat je verbrandt</h3>
+        <h3 data-lang="en">Log your training, see what you burn</h3>
+        <p data-lang="nl">Hyrox-stations, hardlopen, cardio, kracht en mobiliteit. Start/stop-timer of minuten; de app schat je verbranding. Plan je sessies per week.</p>
+        <p data-lang="en">Hyrox stations, running, cardio, strength and mobility. Start/stop timer or minutes; the app estimates your burn. Plan your sessions per week.</p>
+        <ul class="fr-feats">
+          <li data-lang="nl">Oefeningen-database met realistische schattingen</li><li data-lang="en">Exercise database with realistic estimates</li>
+          <li data-lang="nl">Trainingsweekschema — verplaatsen en kopiëren</li><li data-lang="en">Weekly training plan — move and copy</li>
+          <li data-lang="nl">Eigen oefening toevoegen</li><li data-lang="en">Add your own exercise</li>
+        </ul>
+        <span class="tierbadge" data-lang="nl">Basis</span><span class="tierbadge" data-lang="en">Basic</span>
+      </div>
+      <div class="fr-vis">
+        <div class="mock" aria-hidden="true">
+          <div class="mk-top"><div class="dot">H</div><div class="mk-ttl" data-lang="nl">Training · vandaag</div><div class="mk-ttl" data-lang="en">Training · today</div></div>
+          <div class="exrow"><div><div data-lang="nl">SkiErg</div><div data-lang="en">SkiErg</div><div class="mn">1000 m · 4:30</div></div><div class="kc">~55</div></div>
+          <div class="exrow"><div><div data-lang="nl">Sled push</div><div data-lang="en">Sled push</div><div class="mn">50 m · 3:10</div></div><div class="kc">~70</div></div>
+          <div class="exrow"><div><div data-lang="nl">Burpee broad jumps</div><div data-lang="en">Burpee broad jumps</div><div class="mn">80 m · 6:00</div></div><div class="kc">~90</div></div>
+          <div class="exrow"><div><div data-lang="nl">Hardlopen</div><div data-lang="en">Running</div><div class="mn">5 km · 26:00</div></div><div class="kc">~340</div></div>
+          <div class="exrow" style="border-top:1px solid var(--line);margin-top:4px;padding-top:11px"><div><div class="disp" style="font-weight:700" data-lang="nl">Totaal vandaag</div><div class="disp" style="font-weight:700" data-lang="en">Total today</div><div class="mn" data-lang="nl">schatting</div><div class="mn" data-lang="en">estimate</div></div><div class="kc" style="font-size:16px">~555</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Tracking -->
+    <div class="feat-row flip rv">
+      <div class="fr-text">
+        <div class="fr-eye" data-lang="nl">Dagboek &amp; tracking</div><div class="fr-eye" data-lang="en">Diary &amp; tracking</div>
+        <h3 data-lang="nl">Je dag in één overzicht</h3>
+        <h3 data-lang="en">Your day at a glance</h3>
+        <p data-lang="nl">Een dashboard dat je zelf inricht: water, gewicht, je menu van vandaag, training en je Hyrox-aftelteller. Vink maaltijden af terwijl je gaat.</p>
+        <p data-lang="en">A dashboard you set up yourself: water, weight, today's menu, training and your Hyrox countdown. Tick off meals as you go.</p>
+        <ul class="fr-feats">
+          <li data-lang="nl">Waterdoel op je gewicht + trainingsbump</li><li data-lang="en">Water goal from your weight + training bump</li>
+          <li data-lang="nl">Gewichtslog met veilige-tempo-bewaking</li><li data-lang="en">Weight log with safe-rate guard</li>
+          <li data-lang="nl">Kaarten aan/uit naar jouw voorkeur</li><li data-lang="en">Cards on/off to your taste</li>
+        </ul>
+        <span class="tierbadge" data-lang="nl">Basis</span><span class="tierbadge" data-lang="en">Basic</span>
+      </div>
+      <div class="fr-vis">
+        <div class="mock" aria-hidden="true">
+          <div class="mk-top"><div class="dot">H</div><div class="mk-ttl" data-lang="nl">Dashboard</div><div class="mk-ttl" data-lang="en">Dashboard</div></div>
+          <div class="ringrow">
+            <div class="ring"><div class="in"><b>2,6L</b><span data-lang="nl">/ 3,6L</span><span data-lang="en">/ 3.6L</span></div></div>
+            <div class="statbox">
+              <div class="stat"><div class="k" data-lang="nl">Gewicht</div><div class="k" data-lang="en">Weight</div><div class="v">82,4<small style="font-size:10px"> kg</small></div></div>
+              <div class="stat"><div class="k" data-lang="nl">Vandaag</div><div class="k" data-lang="en">Today</div><div class="v">1900<small style="font-size:9px"> kcal</small></div></div>
+            </div>
+          </div>
+          <div class="mealline"><div><div class="t" data-lang="nl">Hyrox</div><div class="t" data-lang="en">Hyrox</div><div data-lang="nl">Race-aftelteller</div><div data-lang="en">Race countdown</div></div><div class="disp" style="color:var(--red);font-weight:800">20<span style="font-size:10px;color:var(--muted)"> dagen</span></div></div>
+          <div class="mealline"><div><div class="t" data-lang="nl">Menu</div><div class="t" data-lang="en">Menu</div><div data-lang="nl">3 van 4 afgevinkt</div><div data-lang="en">3 of 4 checked</div></div><div style="color:var(--sage)">✓</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 & 6. Race protocol + install (two cards) -->
+    <div class="feat-row rv">
+      <div class="fr-text">
+        <div class="fr-eye" data-lang="nl">Hyrox Race Protocol</div><div class="fr-eye" data-lang="en">Hyrox Race Protocol</div>
+        <h3 data-lang="nl">Een plan voor je racedag</h3>
+        <h3 data-lang="en">A plan for your race day</h3>
+        <p data-lang="nl">Carb-laden in de dagen ervoor, een tijdlijn voor racedag zelf, hydratatie en herstel erna — gekoppeld aan je dagboek zodat de laaddagen vanzelf in je week staan.</p>
+        <p data-lang="en">Carb-loading in the days before, a race-day timeline, hydration and recovery after — linked to your diary so the loading days appear in your week automatically.</p>
+        <ul class="fr-feats">
+          <li data-lang="nl">T-2 / T-1 laaddagen + racedag als vaste punten</li><li data-lang="en">T-2 / T-1 loading days + race day as fixed points</li>
+          <li data-lang="nl">Hydratatie- en herstel-richtlijnen</li><li data-lang="en">Hydration and recovery guidance</li>
+        </ul>
+        <span class="tierbadge" data-lang="nl">Pro</span><span class="tierbadge" data-lang="en">Pro</span>
+      </div>
+      <div class="fr-vis">
+        <div class="mock" aria-hidden="true">
+          <div class="mk-top"><div class="dot">H</div><div class="mk-ttl" data-lang="nl">Race Protocol</div><div class="mk-ttl" data-lang="en">Race Protocol</div></div>
+          <div class="mealline"><div><div class="t">T-2</div><div data-lang="nl">Carb-laden start</div><div data-lang="en">Carb-load starts</div><div class="g" data-lang="nl">+1,5 g koolh./kg</div><div class="g" data-lang="en">+1.5 g carbs/kg</div></div><div style="color:var(--muted)">●</div></div>
+          <div class="mealline"><div><div class="t">T-1</div><div data-lang="nl">Laaddag + licht</div><div data-lang="en">Load day + easy</div><div class="g" data-lang="nl">veel vocht, weinig vezels</div><div class="g" data-lang="en">high fluid, low fibre</div></div><div style="color:var(--muted)">●</div></div>
+          <div class="mealline"><div><div class="t" style="color:var(--red)" data-lang="nl">Racedag</div><div class="t" style="color:var(--red)" data-lang="en">Race day</div><div data-lang="nl">Ontbijt 3u ervoor · gel 15 min</div><div data-lang="en">Breakfast 3h before · gel 15 min</div></div><div style="color:var(--red)">▶</div></div>
+          <div class="mealline"><div><div class="t" data-lang="nl">Herstel</div><div class="t" data-lang="en">Recovery</div><div data-lang="nl">Eiwit + koolh. binnen 1u</div><div data-lang="en">Protein + carbs within 1h</div></div><div style="color:var(--sage)">✓</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- install note -->
+    <div class="feat-row flip rv">
+      <div class="fr-text">
+        <div class="fr-eye" data-lang="nl">Installeerbaar</div><div class="fr-eye" data-lang="en">Installable</div>
+        <h3 data-lang="nl">Op je telefoon als echte app</h3>
+        <h3 data-lang="en">On your phone like a real app</h3>
+        <p data-lang="nl">HybridFuelCo is een web-app die je op je beginscherm zet — Android én iPhone. Geen appstore nodig, snel te openen, met herinneringen.</p>
+        <p data-lang="en">HybridFuelCo is a web app you add to your home screen — Android and iPhone. No app store needed, quick to open, with reminders.</p>
+        <ul class="fr-feats">
+          <li data-lang="nl">Werkt in de browser én als geïnstalleerde app</li><li data-lang="en">Works in the browser and as an installed app</li>
+          <li data-lang="nl">Je gegevens bewaard in je account (cloud)</li><li data-lang="en">Your data saved in your account (cloud)</li>
+        </ul>
+        <span class="tierbadge" data-lang="nl">Alle lagen</span><span class="tierbadge" data-lang="en">All tiers</span>
+      </div>
+      <div class="fr-vis">
+        <div class="mock" aria-hidden="true" style="max-width:300px;margin:0 auto">
+          <div class="mk-top"><div class="dot">H</div><div class="mk-ttl">HYBRIDFUELCO</div></div>
+          <div style="display:flex;align-items:center;gap:13px;padding:6px 0 10px">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M12 3v12M8 11l4 4 4-4"/><path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+            <div><div style="font-weight:600;font-size:13px" data-lang="nl">App installeren</div><div style="font-weight:600;font-size:13px" data-lang="en">Install app</div><div style="color:var(--muted);font-size:11px" data-lang="nl">Zet op je beginscherm</div><div style="color:var(--muted);font-size:11px" data-lang="en">Add to home screen</div></div>
+          </div>
+          <div style="background:var(--red);color:#fff;text-align:center;font-family:Archivo;font-weight:700;font-size:13px;padding:11px 0;border-radius:9px" data-lang="nl">Installeren</div>
+          <div style="background:var(--red);color:#fff;text-align:center;font-family:Archivo;font-weight:700;font-size:13px;padding:11px 0;border-radius:9px" data-lang="en">Install</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="plans">
+<!-- PRICING -->
+<section id="prijzen">
   <div class="wrap">
-    <div class="eyebrow rv" data-lang="nl">Jouw plan</div><div class="eyebrow rv" data-lang="en">Your plan</div>
-    <h2 class="rv" data-lang="nl">Begin met één persoonlijk weekschema</h2>
-    <h2 class="rv" data-lang="en">Start with one personal week plan</h2>
-    <div class="plans">
-      <div class="plan rv">
-        <h3 data-lang="nl">Weekschema op maat</h3><h3 data-lang="en">Personal week plan</h3>
-        <div class="price">€<span>14,95</span></div>
-        <ul>
-          <li data-lang="nl">Berekend op jóuw doelen en macro's</li><li data-lang="en">Built on your goals and macros</li>
-          <li data-lang="nl">Weeggewichten per maaltijd</li><li data-lang="en">Weigh-out grams per meal</li>
-          <li data-lang="nl">Boodschappenlijst inbegrepen</li><li data-lang="en">Shopping list included</li>
-          <li data-lang="nl">Als Excel om af te strepen en bij te houden</li><li data-lang="en">As Excel to tick off and track</li>
-          <li data-lang="nl">Gemaakt door een kok, niet door een template</li><li data-lang="en">Made by a chef, not a template</li>
-        </ul>
-        <a class="btn line" href="https://buy.stripe.com/fZu4gBdvz1oQgru0Sd1wY00" style="margin-top:auto"><span data-lang="nl">Bestel voor €14,95</span><span data-lang="en">Get it for €14,95</span></a>
-      </div>
-      <div class="plan feat rv">
-        <div class="tag" data-lang="nl">Meest compleet</div><div class="tag" data-lang="en">Most complete</div>
-        <h3 data-lang="nl">Weekschema + Hyrox-gids</h3><h3 data-lang="en">Week plan + Hyrox guide</h3>
-        <div class="price">€<span>17,95</span></div>
-        <ul>
-          <li data-lang="nl">Alles uit het weekschema</li><li data-lang="en">Everything in the week plan</li>
-          <li data-lang="nl"><strong>+ Gids: Eten rond je Hyrox-training</strong></li><li data-lang="en"><strong>+ Guide: Eating around your Hyrox training</strong></li>
-          <li data-lang="nl">Voeding afgestemd op zware & rustdagen</li><li data-lang="en">Nutrition timed to hard & rest days</li>
-          <li data-lang="nl">Race-week aanpak inbegrepen</li><li data-lang="en">Race-week approach included</li>
-        </ul>
-        <a class="btn solid" href="https://buy.stripe.com/7sYbJ3gHL2sU7UY30l1wY01" style="margin-top:auto"><span data-lang="nl">Bestel voor €17,95</span><span data-lang="en">Get it for €17,95</span></a>
+    <div class="eyebrow rv" data-lang="nl">Prijzen</div><div class="eyebrow rv" data-lang="en">Pricing</div>
+    <h2 class="rv" data-lang="nl">Begin gratis, upgrade wanneer je wilt</h2>
+    <h2 class="rv" data-lang="en">Start free, upgrade when you want</h2>
+    <p class="sub rv" data-lang="nl">Premium functies tegen een eerlijke prijs. Opzeggen kan altijd; je houdt toegang tot het einde van je periode.</p>
+    <p class="sub rv" data-lang="en">Premium features at a fair price. Cancel anytime; you keep access until the end of your period.</p>
+
+    <div class="toggle-wrap rv">
+      <div class="toggle">
+        <button id="tmo" class="on" onclick="setBill('mo')"><span data-lang="nl">Maandelijks</span><span data-lang="en">Monthly</span></button>
+        <button id="tyr" onclick="setBill('yr')"><span data-lang="nl">Jaarlijks</span><span data-lang="en">Yearly</span><span class="save-badge" data-lang="nl">2 mnd gratis</span><span class="save-badge" data-lang="en">2 months free</span></button>
       </div>
     </div>
-    <p class="next-step rv" data-lang="nl">Geen abonnement, geen verplichting. Bevalt het? Je bestelt gewoon een nieuwe week wanneer je wilt.</p>
-    <p class="next-step rv" data-lang="en">No subscription, no commitment. Like it? Just order a new week whenever you want.</p>
+
+    <div class="tiers rv">
+      <!-- Gratis -->
+      <div class="tier">
+        <h3 data-lang="nl">Gratis</h3><h3 data-lang="en">Free</h3>
+        <div class="price">€0</div>
+        <div class="pricesub" data-lang="nl">Om te beginnen</div><div class="pricesub" data-lang="en">To get started</div>
+        <ul>
+          <li data-lang="nl">Macro-calculator (calorieën + macro's)</li><li data-lang="en">Macro calculator (calories + macros)</li>
+          <li data-lang="nl">Train/rust-caloriesplit</li><li data-lang="en">Training/rest calorie split</li>
+          <li data-lang="nl">Receptenbibliotheek bekijken</li><li data-lang="en">Browse the recipe library</li>
+          <li class="muted" data-lang="nl">Weekplan in de app</li><li class="muted" data-lang="en">Week plan in the app</li>
+          <li class="muted" data-lang="nl">Tracker, water &amp; dashboard</li><li class="muted" data-lang="en">Tracker, water &amp; dashboard</li>
+        </ul>
+        <a class="btn line" href="https://app.hybridfuelco.com" style="margin-top:auto"><span data-lang="nl">Start gratis</span><span data-lang="en">Start free</span></a>
+      </div>
+      <!-- Basis -->
+      <div class="tier feat">
+        <div class="tag" data-lang="nl">Populair</div><div class="tag" data-lang="en">Popular</div>
+        <h3 data-lang="nl">Basis</h3><h3 data-lang="en">Basic</h3>
+        <div class="price">€<b class="pm">9,95</b><b class="py">99,50</b> <small class="pm"><span data-lang="nl">/mnd</span><span data-lang="en">/mo</span></small><small class="py"><span data-lang="nl">/jr</span><span data-lang="en">/yr</span></small></div>
+        <div class="pricesub pm"><span data-lang="nl">Maandelijks opzegbaar</span><span data-lang="en">Cancel monthly</span></div>
+        <div class="pricesub py"><span data-lang="nl">€99,50/jaar — 2 maanden gratis</span><span data-lang="en">€99.50/year — 2 months free</span></div>
+        <ul>
+          <li data-lang="nl">Alles uit Gratis</li><li data-lang="en">Everything in Free</li>
+          <li data-lang="nl">Persoonlijk weekplan in de app</li><li data-lang="en">Personal week plan in the app</li>
+          <li data-lang="nl">Weeggewichten + boodschappenlijst</li><li data-lang="en">Weigh-out grams + shopping list</li>
+          <li data-lang="nl">Tracker, water &amp; vandaag-dashboard</li><li data-lang="en">Tracker, water &amp; today dashboard</li>
+          <li data-lang="nl">Training loggen + weekschema</li><li data-lang="en">Training log + weekly plan</li>
+          <li data-lang="nl">Excel / Google Sheets-export</li><li data-lang="en">Excel / Google Sheets export</li>
+        </ul>
+        <a class="btn solid" href="https://app.hybridfuelco.com" style="margin-top:auto"><span data-lang="nl">Kies Basis</span><span data-lang="en">Choose Basic</span></a>
+      </div>
+      <!-- Pro -->
+      <div class="tier">
+        <h3 data-lang="nl">Pro</h3><h3 data-lang="en">Pro</h3>
+        <div class="price">€<b class="pm">14,95</b><b class="py">149,50</b> <small class="pm"><span data-lang="nl">/mnd</span><span data-lang="en">/mo</span></small><small class="py"><span data-lang="nl">/jr</span><span data-lang="en">/yr</span></small></div>
+        <div class="pricesub pm"><span data-lang="nl">Maandelijks opzegbaar</span><span data-lang="en">Cancel monthly</span></div>
+        <div class="pricesub py"><span data-lang="nl">€149,50/jaar — 2 maanden gratis</span><span data-lang="en">€149.50/year — 2 months free</span></div>
+        <ul>
+          <li data-lang="nl">Alles uit Basis</li><li data-lang="en">Everything in Basic</li>
+          <li data-lang="nl">Dag-editor: plan zelf aanpassen</li><li data-lang="en">Day editor: adjust your plan</li>
+          <li data-lang="nl">Eigen producten toevoegen</li><li data-lang="en">Add your own products</li>
+          <li data-lang="nl">Barcode-scan</li><li data-lang="en">Barcode scan</li>
+          <li data-lang="nl">Hyrox Race Protocol</li><li data-lang="en">Hyrox Race Protocol</li>
+        </ul>
+        <a class="btn line" href="https://app.hybridfuelco.com" style="margin-top:auto"><span data-lang="nl">Kies Pro</span><span data-lang="en">Choose Pro</span></a>
+      </div>
+    </div>
+
+    <!-- one-off -->
+    <div class="oneoff rv">
+      <div>
+        <h4 data-lang="nl">Liever geen abonnement?</h4><h4 data-lang="en">Rather not subscribe?</h4>
+        <p data-lang="nl">Bestel een los weekschema als download — eenmalig, geen verplichting. Bevalt het? Je bestelt gewoon een nieuwe week wanneer je wilt.</p>
+        <p data-lang="en">Order a single week plan as a download — one-off, no commitment. Like it? Just order a new week whenever you want.</p>
+      </div>
+      <div class="obtns">
+        <a href="https://buy.stripe.com/fZu4gBdvz1oQgru0Sd1wY00"><span data-lang="nl">Weekschema · €14,95</span><span data-lang="en">Week plan · €14.95</span></a>
+        <a href="https://buy.stripe.com/7sYbJ3gHL2sU7UY30l1wY01"><span data-lang="nl">+ Hyrox-gids · €17,95</span><span data-lang="en">+ Hyrox guide · €17.95</span></a>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="story">
+<!-- STORY -->
+<section id="verhaal">
   <div class="wrap story">
     <div class="rv">
       <div class="blk" data-lang="nl"><div class="bq">Een kok die traint.<br><em>Daar zit het verschil.</em></div></div>
@@ -365,6 +686,41 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="eyebrow rv" data-lang="nl">Veelgestelde vragen</div><div class="eyebrow rv" data-lang="en">FAQ</div>
+    <h2 class="rv" data-lang="nl">Goed om te weten</h2>
+    <h2 class="rv" data-lang="en">Good to know</h2>
+    <div class="faq rv">
+      <details class="q">
+        <summary><span><span data-lang="nl">Wat is het verschil met een gewone calorie-tracker?</span><span data-lang="en">How is this different from a regular calorie tracker?</span></span><span class="pl">+</span></summary>
+        <div class="a"><span data-lang="nl">Een tracker laat jóu het werk doen: alles opzoeken en invoeren. HybridFuelCo geeft je een compleet plan — mét gewichten, boodschappenlijst, recepten en training — afgestemd op je trainingsdagen. Je volgt en vinkt af, in plaats van zelf te puzzelen.</span><span data-lang="en">A tracker makes you do the work: look everything up and log it. HybridFuelCo gives you a complete plan — with weights, shopping list, recipes and training — tuned to your training days. You follow and tick off, instead of puzzling it out yourself.</span></div>
+      </details>
+      <details class="q">
+        <summary><span><span data-lang="nl">Hoe werkt de personalisatie?</span><span data-lang="en">How does personalization work?</span></span><span class="pl">+</span></summary>
+        <div class="a"><span data-lang="nl">Je geeft je lengte, gewicht, doel en trainingsdagen op. Daaruit berekenen we je calorieën en macro's volgens gangbare formules, met calorieën omhoog op trainingsdagen en omlaag op rustdagen — het weekgemiddelde blijft op je doel.</span><span data-lang="en">You enter your height, weight, goal and training days. From that we compute your calories and macros using common formulas, with calories up on training days and down on rest days — the weekly average stays on your goal.</span></div>
+      </details>
+      <details class="q">
+        <summary><span><span data-lang="nl">Op welke apparaten werkt het?</span><span data-lang="en">What devices does it work on?</span></span><span class="pl">+</span></summary>
+        <div class="a"><span data-lang="nl">In elke browser, en als installeerbare app op Android en iPhone (je zet 'm op je beginscherm). Je gegevens staan in je account, dus je kunt wisselen van apparaat.</span><span data-lang="en">In any browser, and as an installable app on Android and iPhone (you add it to your home screen). Your data lives in your account, so you can switch devices.</span></div>
+      </details>
+      <details class="q">
+        <summary><span><span data-lang="nl">Kan ik maandelijks opzeggen?</span><span data-lang="en">Can I cancel monthly?</span></span><span class="pl">+</span></summary>
+        <div class="a"><span data-lang="nl">Ja. Je zegt op in je account; je houdt toegang tot het einde van je betaalde periode. Een jaarabonnement is 2 maanden goedkoper dan maandelijks.</span><span data-lang="en">Yes. You cancel in your account; you keep access until the end of your paid period. A yearly plan is 2 months cheaper than monthly.</span></div>
+      </details>
+      <details class="q">
+        <summary><span><span data-lang="nl">Abonnement of los — wat kies ik?</span><span data-lang="en">Subscription or one-off — which do I pick?</span></span><span class="pl">+</span></summary>
+        <div class="a"><span data-lang="nl">Het abonnement is de app die je dagelijks gebruikt: plan, recepten, training, tracking en racedag. Liever eenmalig? Bestel een los weekschema als download — zonder account en zonder verplichting.</span><span data-lang="en">The subscription is the app you use daily: plan, recipes, training, tracking and race day. Prefer a one-off? Order a single week plan as a download — no account, no commitment.</span></div>
+      </details>
+      <details class="q">
+        <summary><span><span data-lang="nl">Is mijn data veilig?</span><span data-lang="en">Is my data safe?</span></span><span class="pl">+</span></summary>
+        <div class="a"><span data-lang="nl">Je verbinding is altijd versleuteld en je gegevens staan afgeschermd in je eigen account; je kunt ze zelf verwijderen. Zie onze <a href="privacy.html">privacyverklaring</a>.</span><span data-lang="en">Your connection is always encrypted and your data is kept private to your own account; you can delete it yourself. See our <a href="privacy.html">privacy statement</a>.</span></div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- BLOG -->
 <section id="blog">
   <div class="wrap">
@@ -372,7 +728,6 @@
     <h2 class="rv" data-lang="nl">Kennis uit keuken en training</h2>
     <h2 class="rv" data-lang="en">Notes from kitchen and training</h2>
     <div class="blog-grid">
-      <!-- VOORBEELDPOST — kopieer een <a class="post"> blok voor elke nieuwe post -->
       <a class="post rv" href="blog-1.html">
         <div class="post-tag" data-lang="nl">Voeding</div><div class="post-tag" data-lang="en">Nutrition</div>
         <h3 data-lang="nl">Waarom 1900 kcal vaak te laag is voor een actieve atleet</h3>
@@ -397,6 +752,19 @@
         <p data-lang="en">Simple rules of thumb for before and after your session — no powders, no hype.</p>
         <span class="readmore" data-lang="nl">Lees verder</span><span class="readmore" data-lang="en">Read more</span>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING CTA -->
+<section class="closer">
+  <div class="wrap rv">
+    <h2 data-lang="nl">Klaar om te beginnen?</h2><h2 data-lang="en">Ready to start?</h2>
+    <p class="sub" data-lang="nl">Begin gratis met de calculator en recepten. Upgrade wanneer je de volledige app wilt.</p>
+    <p class="sub" data-lang="en">Start free with the calculator and recipes. Upgrade when you want the full app.</p>
+    <div class="cta-row">
+      <a class="btn solid" href="https://app.hybridfuelco.com"><span data-lang="nl">Start gratis</span><span data-lang="en">Start free</span></a>
+      <a class="btn line" href="#prijzen"><span data-lang="nl">Bekijk de prijzen</span><span data-lang="en">See the pricing</span></a>
     </div>
   </div>
 </section>
@@ -440,6 +808,12 @@
   }
   (function(){var s=null;try{s=localStorage.getItem('hf_lang');}catch(e){}if(s==='nl'||s==='en')setLang(s);})();
 
+  function setBill(b){
+    document.body.classList.toggle('bill-yr',b==='yr');
+    document.getElementById('tmo').classList.toggle('on',b==='mo');
+    document.getElementById('tyr').classList.toggle('on',b==='yr');
+  }
+
   // Reveal-on-scroll (één keer per element)
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
@@ -460,7 +834,7 @@
       co.unobserve(e.target);
     }});
   },{threshold:.4});
-  document.querySelectorAll('.phone').forEach(function(el){co.observe(el);});
+  document.querySelectorAll('.mock').forEach(function(el){co.observe(el);});
 </script>
   <script src="https://www.hybridfuelco.com/consent.js"></script>
 </body>
