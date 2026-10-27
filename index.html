@@ -233,7 +233,7 @@
   .toggle button.on{background:var(--red);color:#fff}
   .save-badge{color:var(--sage);font-size:12px;font-weight:600;margin-left:6px}
   .tiers{display:grid;grid-template-columns:1fr;gap:18px;margin-top:30px}
-  @media(min-width:780px){.tiers{grid-template-columns:repeat(3,1fr);align-items:stretch}}
+  @media(min-width:780px){.tiers{grid-template-columns:repeat(2,1fr);align-items:stretch;max-width:760px;margin-left:auto;margin-right:auto}}
   .tier{background:var(--black2);border:1px solid var(--line);border-radius:18px;padding:30px;display:flex;flex-direction:column;transition:transform .3s var(--ease),border-color .3s}
   .tier:hover{transform:translateY(-4px);border-color:#333}
   .tier.feat{border-color:var(--red);background:linear-gradient(180deg,rgba(225,29,72,.06),transparent 42%)}
@@ -257,6 +257,27 @@
   .oneoff .obtns{display:flex;flex-wrap:wrap;gap:10px}
   .oneoff .obtns a{font-family:Archivo;font-weight:700;font-size:13px;border:1px solid var(--line);border-radius:9px;padding:11px 16px;white-space:nowrap;transition:border-color .2s}
   .oneoff .obtns a:hover{border-color:var(--white)}
+  .freegift{background:linear-gradient(180deg,rgba(225,29,72,.08),transparent 60%);border:1px solid var(--red);border-radius:20px;padding:34px 28px;max-width:640px;margin:0 auto}
+  .freegift .fg-eye{color:var(--red);font-size:12.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px;text-align:center}
+  .freegift h2{font-family:Archivo;font-weight:800;font-size:clamp(23px,4vw,30px);letter-spacing:-.6px;text-align:center;line-height:1.1}
+  .freegift .fg-sub{color:#cfcfcf;font-size:15px;text-align:center;margin:12px auto 4px;max-width:480px}
+  .freegift .fg-list{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;margin:18px 0 22px;color:#e9e9e9;font-size:13.5px}
+  .freegift .fg-list span{display:inline-flex;align-items:center;gap:7px}
+  .freegift .fg-list svg{color:var(--red);flex:none}
+  .fg-form{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .fg-form input[type=email]{flex:1;min-width:220px;background:#0e0e0e;border:1px solid var(--line);border-radius:10px;padding:13px 15px;color:#fff;font-size:15px;font-family:Inter}
+  .fg-form input[type=email]:focus{outline:none;border-color:var(--red)}
+  .fg-form button{background:var(--red);color:#fff;border:none;font-family:Archivo;font-weight:700;font-size:14.5px;padding:13px 22px;border-radius:10px;cursor:pointer;white-space:nowrap;transition:filter .2s}
+  .fg-form button:hover{filter:brightness(1.08)}
+  .fg-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .fg-fine{color:var(--muted);font-size:11.5px;text-align:center;margin-top:12px}
+  .fg-done{display:none;text-align:center}
+  .fg-done.on{display:block}
+  .fg-form.hide{display:none}
+  .fg-dl{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:16px}
+  .fg-dl a{background:var(--red);color:#fff;text-decoration:none;font-family:Archivo;font-weight:700;font-size:14px;padding:12px 20px;border-radius:10px}
+  .fg-dl a.alt{background:transparent;border:1px solid var(--line);color:#fff}
+  .fg-dl a.alt:hover{border-color:var(--white)}
 
   /* STORY */
   .story{display:grid;grid-template-columns:1fr;gap:30px;align-items:start}
@@ -322,7 +343,7 @@
 <a href="#faq">FAQ</a>
 <a href="#blog">Blog</a>
 </div>
-<a class="navcta" href="https://app.hybridfuelco.com"><span data-lang="en">Start free</span></a>
+<a class="navcta" href="#gratis"><span data-lang="en">Start free</span></a>
 <div class="langtoggle"><a class="lt on" href="/">EN</a><a class="lt" href="/nl/">NL</a></div>
 </div>
 </nav>
@@ -338,11 +359,11 @@
 
 <p class="lead" data-lang="en">One app for your food and your training: a personal week plan with exact weights, 100+ recipes, a training log and your Hyrox race-day plan. Made by a chef who trains — not a calculator.</p>
 <div class="cta-row">
-<a class="btn solid" href="https://app.hybridfuelco.com"><span data-lang="en">Start free</span></a>
-<a class="btn line" href="#prijzen"><span data-lang="en">See the pricing</span></a>
+<a class="btn solid" href="#gratis"><span data-lang="en">Start free</span></a>
+<a class="btn line" href="#prijzen"><span data-lang="en">See the plans</span></a>
 </div>
 
-<div class="hero-note" data-lang="en">Start free with the macro calculator and recipes. No payment details needed.</div>
+<div class="hero-note" data-lang="en">Free macro calculator + Excel tracker. No payment details needed.</div>
 </div>
 </header>
 <!-- TRUST STRIP (eerlijk — geen verzonnen cijfers) -->
@@ -354,6 +375,36 @@
 <div class="ti"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="16"><path d="M20 6L9 17l-5-5"></path></svg><span data-lang="en">Dutch &amp; English</span></div>
 </div>
 </div>
+<!-- FREE GIFT / LEAD MAGNET -->
+<section id="gratis">
+<div class="wrap">
+<div class="freegift rv">
+<div class="fg-eye" data-lang="en">Free — no payment</div>
+<h2 data-lang="en">Your macros + a full Excel tracker, free</h2>
+<p class="fg-sub" data-lang="en">Drop your email and get your Hyrox nutrition starter pack: the macro calculator, a ready-to-use Excel tracker and a free starter guide. No card, no catch.</p>
+<div class="fg-list" data-lang="en">
+<span><svg fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24" width="15"><path d="M20 6L9 17l-5-5"></path></svg>Macro calculator</span>
+<span><svg fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24" width="15"><path d="M20 6L9 17l-5-5"></path></svg>Excel tracker (grams &amp; macros)</span>
+<span><svg fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24" width="15"><path d="M20 6L9 17l-5-5"></path></svg>Hyrox starter guide (PDF)</span>
+</div>
+<form class="fg-form" id="fgForm" onsubmit="return fgSubmit(event)">
+<input type="text" class="fg-hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true"/>
+<input type="email" id="fgEmail" placeholder="your@email.com" aria-label="Email" required=""/>
+<button type="submit" data-lang="en">Get it free</button>
+</form>
+<div class="fg-fine" data-lang="en">We'll send occasional training &amp; fuelling tips and the odd offer. Unsubscribe anytime. See our <a href="privacy.html">privacy statement</a>.</div>
+<div class="fg-done" id="fgDone">
+<h2 data-lang="en">Done — it's yours.</h2>
+<p class="fg-sub" data-lang="en">Download below, and open the free calculator in the app.</p>
+<div class="fg-dl">
+<a href="tracker-en.xlsx" download="">Download Excel tracker</a>
+<a class="alt" href="hyrox-starter-en.pdf" download="">Hyrox starter (PDF)</a>
+<a class="alt" href="https://app.hybridfuelco.com">Open the free calculator</a>
+</div>
+</div>
+</div>
+</div>
+</section>
 <!-- PILLARS -->
 <section id="waarom">
 <div class="wrap">
@@ -589,9 +640,9 @@
 <div class="wrap">
 <div class="eyebrow rv" data-lang="en">Pricing</div>
 
-<h2 class="rv" data-lang="en">Start free, upgrade when you want</h2>
+<h2 class="rv" data-lang="en">One subscription, everything inside</h2>
 
-<p class="sub rv" data-lang="en">Premium features at a fair price. Cancel anytime; you keep access until the end of your period.</p>
+<p class="sub rv" data-lang="en">The full app for a fair price. Cancel anytime; you keep access until the end of your period. Not ready to subscribe? Start free below.</p>
 <div class="toggle-wrap rv">
 <div class="toggle">
 <button class="on" id="tmo" onclick="setBill('mo')"><span data-lang="en">Monthly</span></button>
@@ -599,20 +650,6 @@
 </div>
 </div>
 <div class="tiers rv">
-<!-- Gratis -->
-<div class="tier">
-<h3 data-lang="en">Free</h3>
-<div class="price">€0</div>
-<div class="pricesub" data-lang="en">To get started</div>
-<ul>
-<li data-lang="en">Macro calculator (calories + macros)</li>
-<li data-lang="en">Training/rest calorie split</li>
-<li data-lang="en">Browse the recipe library</li>
-<li class="muted" data-lang="en">Week plan in the app</li>
-<li class="muted" data-lang="en">Tracker, water &amp; dashboard</li>
-</ul>
-<a class="btn line" href="https://app.hybridfuelco.com" style="margin-top:auto"><span data-lang="en">Start free</span></a>
-</div>
 <!-- Basis -->
 <div class="tier feat">
 <div class="tag" data-lang="en">Popular</div>
@@ -621,7 +658,7 @@
 <div class="pricesub pm"><span data-lang="en">Cancel monthly</span></div>
 <div class="pricesub py"><span data-lang="en">€99.50/year — 2 months free</span></div>
 <ul>
-<li data-lang="en">Everything in Free</li>
+<li data-lang="en">Macro calculator &amp; recipe library</li>
 <li data-lang="en">Personal week plan in the app</li>
 <li data-lang="en">Weigh-out grams + shopping list</li>
 <li data-lang="en">Tracker, water &amp; today dashboard</li>
@@ -775,10 +812,10 @@
 <div class="wrap rv">
 <h2 data-lang="en">Ready to start?</h2>
 
-<p class="sub" data-lang="en">Start free with the calculator and recipes. Upgrade when you want the full app.</p>
+<p class="sub" data-lang="en">Grab your free macros + Excel tracker, or go straight to the full app.</p>
 <div class="cta-row">
-<a class="btn solid" href="https://app.hybridfuelco.com"><span data-lang="en">Start free</span></a>
-<a class="btn line" href="#prijzen"><span data-lang="en">See the pricing</span></a>
+<a class="btn solid" href="#gratis"><span data-lang="en">Start free</span></a>
+<a class="btn line" href="#prijzen"><span data-lang="en">See the plans</span></a>
 </div>
 </div>
 </section>
@@ -814,6 +851,22 @@
     document.body.classList.toggle('bill-yr',b==='yr');
     document.getElementById('tmo').classList.toggle('on',b==='mo');
     document.getElementById('tyr').classList.toggle('on',b==='yr');
+  }
+
+  function fgSubmit(e){
+    e.preventDefault();
+    var f=document.getElementById('fgForm');
+    var hp=f.querySelector('.fg-hp'); if(hp&&hp.value){return false;}
+    var em=document.getElementById('fgEmail').value.trim(); if(!em){return false;}
+    var lang=(document.documentElement.lang||'en').slice(0,2);
+    try{
+      var body='email='+encodeURIComponent(em)+'&lang='+lang+'&source=website-leadmagnet&ts='+encodeURIComponent(new Date().toISOString());
+      fetch('https://hook.eu1.make.com/fsljkjtafa64lt7f7c96fnsu8aodk9uf',{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body});
+    }catch(err){}
+    f.classList.add('hide');
+    var fine=f.parentNode.querySelector('.fg-fine'); if(fine)fine.style.display='none';
+    document.getElementById('fgDone').classList.add('on');
+    return false;
   }
 
   // Reveal-on-scroll (één keer per element)
