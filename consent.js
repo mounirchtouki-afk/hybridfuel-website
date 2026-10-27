@@ -9,10 +9,15 @@
   /* ====================================== */
 
   function getConsent() {
+    // localStorage eerst: overleeft het herstarten van een geïnstalleerde app (PWA)
+    // betrouwbaarder dan een JS-cookie (iOS/ITP knijpt die af). Cookie als fallback +
+    // voor delen tussen website en app waar dat wél werkt.
+    try { var ls = localStorage.getItem("hf_consent"); if (ls === "accepted" || ls === "rejected") return ls; } catch (e) {}
     var m = document.cookie.match(/(?:^|;\s*)hf_consent=([^;]+)/);
     return m ? m[1] : null;
   }
   function setConsent(v) {
+    try { localStorage.setItem("hf_consent", v); } catch (e) {}
     var d = new Date(); d.setFullYear(d.getFullYear() + 1);
     document.cookie = "hf_consent=" + v + "; expires=" + d.toUTCString() + "; path=/; domain=.hybridfuelco.com; SameSite=Lax";
   }
