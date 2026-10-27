@@ -9,4 +9,4 @@ Disallow: /hyrox-guide-nl.pdf
 Disallow: /tracker-en.xlsx
 Disallow: /tracker-nl.xlsx
 
-Sitemap: https://hybridfuelco.com/sitemap.xml
+Sitemap: https://www.hybridfuelco.com/sitemap.xml
