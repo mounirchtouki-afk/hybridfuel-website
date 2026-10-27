@@ -96,6 +96,9 @@
   .light .btn-ghost{border-color:var(--line-light);color:var(--on-light)}
   .light .btn-ghost:hover{border-color:var(--red)}
   .nav-cta{font-family:var(--f-disp);font-weight:700;font-size:13px;background:var(--red);color:#fff;padding:9px 16px;border-radius:10px;white-space:nowrap;box-shadow:0 6px 20px rgba(225,29,72,.34)}
+  .nav-link{font-family:var(--f-disp);font-weight:700;font-size:13px;color:inherit;opacity:.82;white-space:nowrap;padding:5px 4px;transition:opacity .2s}
+  .nav-link:hover{opacity:1}
+  @media(max-width:600px){.nav-link{display:none}}
   .nav-cta:hover{background:var(--red-2);box-shadow:0 12px 34px rgba(225,29,72,.5)}
 
   .blk{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden}
@@ -293,6 +296,7 @@
 <body>
 <nav id="nav">
   <div class="brand"><div class="mk">H</div><div class="nm">Hybrid<b>Fuel</b>Co</div></div>
+  <a class="nav-link tap" href="#plans">Plans</a>
   <div class="lang"><a class="on" href="/">EN</a><a href="/nl/">NL</a></div>
   <a class="nav-cta tap" href="#gratis">Start free</a>
 </nav>
@@ -308,9 +312,9 @@
       <p class="lead">A personal plan built on y&#111;ur macros, with exact weights, your training in it and a race-day plan. Everything you need to perform — nothing you don't. Made by a chef who trains.</p>
       <div class="btns">
         <a class="btn btn-red tap" href="#gratis">Start free</a>
-        <a class="btn btn-ghost tap" href="#app">See the app</a>
+        <a class="btn btn-ghost tap" href="#plans">See the plans</a>
       </div>
-      <div class="hero-sub"><span class="pulse"></span> Start free · Basic €9.95 · Pro €14.95 per month</div>
+      <div class="hero-sub"><span class="pulse"></span> Start free · <a href="#plans" style="color:inherit;text-decoration:underline;text-underline-offset:2px">Basic €9.95 · Pro €14.95 per month</a></div>
     </div>
   </div>
   <a class="scrollcue" href="#app"><span>Scroll</span><span class="ln"></span></a>
@@ -448,6 +452,7 @@
         </div>
       </div>
       <a class="calc-link tap" href="calculator.html">Or use the free calculator now &rarr;</a>
+      <a class="calc-link tap" href="#plans" style="margin-top:6px">Ready for the full app? See the plans &rarr;</a>
     </div>
   </div>
 </section>
@@ -526,10 +531,10 @@
     <div class="inner" style="margin-top:64px">
       <h2 class="sec-h rv">Ready to fuel<span class="dot">?</span></h2>
       <p class="lead rv d1" style="margin-left:auto;margin-right:auto">Start free today. Upgrade whenever you want — you keep all your data.</p>
-      <div class="btns rv d2"><a class="btn btn-red tap" href="#gratis">Start free</a><a class="btn btn-ghost tap" href="calculator.html">Free calculator</a></div>
+      <div class="btns rv d2"><a class="btn btn-red tap" href="#gratis">Start free</a><a class="btn btn-ghost tap" href="#plans">See the plans</a><a class="btn btn-ghost tap" href="calculator.html">Free calculator</a></div>
       <div class="foot rv d2">
         <div class="flinks">
-          <a href="calculator.html">Calculator</a><a href="blog-1.html">Blog</a><a href="voorwaarden.html">Terms</a><a href="privacy.html">Privacy</a><a href="disclaimer.html">Disclaimer</a><a href="herroeping.html">Returns</a>
+          <a href="#plans">Plans</a><a href="calculator.html">Calculator</a><a href="blog-1.html">Blog</a><a href="voorwaarden.html">Terms</a><a href="privacy.html">Privacy</a><a href="disclaimer.html">Disclaimer</a><a href="herroeping.html">Returns</a>
         </div>
         <div class="soc">
           <a aria-label="Instagram" href="https://www.instagram.com/hybrid_fuel_co/" rel="noopener" target="_blank"><svg fill="currentColor" height="22" viewBox="0 0 24 24" width="22"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3zm5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-2.6a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"></path></svg></a>
