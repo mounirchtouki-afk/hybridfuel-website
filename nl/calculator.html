@@ -94,6 +94,8 @@
   .trow .tl{font-size:14px;color:#eee}
   .trow .tl small{color:var(--muted);font-size:12px;display:block}
   .disclaim{color:var(--muted);font-size:12px;margin-top:20px;border-left:2px solid var(--line);padding-left:14px}
+  .warn{display:none;margin-top:16px;background:rgba(225,29,72,.09);border:1px solid rgba(225,29,72,.38);border-radius:10px;padding:13px 15px;color:#ffd7df;font-size:13px;line-height:1.5}
+  .warn.on{display:block}
   .upsell{background:linear-gradient(180deg,rgba(225,29,72,.1),transparent 65%);border:1px solid var(--red);border-radius:18px;padding:28px 24px;margin-top:30px;text-align:center}
   .upsell h3{font-family:Archivo;font-weight:800;font-size:clamp(20px,3.5vw,25px);letter-spacing:-.4px}
   .upsell p{color:#cfcfcf;font-size:14.5px;margin:10px auto 0;max-width:460px}
@@ -208,6 +210,7 @@
 <div class="rbox"><div class="k">Vet</div><div class="v"><span id="rF">0</span><small>g</small></div></div>
 </div>
 <div class="maintnote">Je onderhoud is ongeveer <strong id="rMaint">0</strong> kcal. <span id="rGoalNote"></span></div>
+<div class="warn" id="warn"></div>
 
 <h3 class="sec-h">Een voorbeeld 3-daags plan</h3>
 <p class="sec-sub">Drie roulerende dagen rond je doel — het soort structuur dat de app omzet in exacte weeggewichten en een boodschappenlijst.</p>
@@ -263,6 +266,9 @@
     goalLose:"Om in een veilig tempo vet te verliezen, eet je rond je doel. Houd je eiwit hoog en de meeste koolhydraten rond je training.",
     goalMaint:"Zo blijf je getankt om te trainen en presteren terwijl je je gewicht vasthoudt.",
     goalGain:"Een klein overschot voor droge aankomst — langzaam en gestaag beschermt tegen vetaanwinst.",
+    errInput:"Vul een geldige leeftijd, gewicht en lengte in.",
+    errMinor:"Deze calculator is voor volwassenen (18+). Ben je jonger dan 18, overleg dan met een arts of diëtist over voeding rond je training — ga niet diëten op een algemeen getal.",
+    warnLow:"Dit is de laagste inname die we voor jouw lichaam nog veilig vinden. Minder eten werkt averechts — het remt vetverlies, kost je energie en spiermassa. Sneller resultaat? Train meer, snijd niet verder in je eten. Bij een medische aandoening of een verleden met een eetstoornis: overleg eerst met een professional.",
     bf:"Ontbijt", lu:"Lunch", di:"Diner", sn:"Snack"
   };
   var sex='m', units='metric';
@@ -321,15 +327,18 @@
     if(units==='metric'){ kg=parseFloat(document.getElementById('weight').value); cm=parseFloat(document.getElementById('heightcm').value); }
     else { kg=parseFloat(document.getElementById('weight').value)/2.20462; var ft=parseFloat(document.getElementById('ft').value)||0; var inch=parseFloat(document.getElementById('inch').value)||0; cm=(ft*12+inch)*2.54; }
     var err=document.getElementById('err');
-    if(!age||!kg||!cm||age<14||age>99||kg<35||cm<120){ err.classList.add('on'); return; }
+    if(!age||!kg||!cm||age>99||kg<35||kg>300||cm<120||cm>230){ err.textContent=L.errInput; err.classList.add('on'); return; }
+    if(age<18){ err.textContent=L.errMinor; err.classList.add('on'); return; }
     err.classList.remove('on');
     var days=parseFloat(document.getElementById('days').value);
     var goal=document.getElementById('goal').value;
     var bmr=10*kg+6.25*cm-5*age+(sex==='m'?5:-161);
     var af = days<=0?1.3: days<=2?1.42: days<=4?1.55: days<=6?1.7:1.8;
     var tdee=bmr*af;
-    var target = goal==='lose'? tdee*0.82 : goal==='gain'? tdee*1.08 : tdee;
-    if(target<bmr*1.1) target=bmr*1.1;
+    var raw = goal==='lose'? tdee*0.82 : goal==='gain'? tdee*1.08 : tdee;
+    var safeMin = Math.max(bmr*1.1, sex==='m'?1500:1200);
+    var warnLow = raw < safeMin;
+    var target = Math.max(raw, safeMin);
     var protein=Math.round(2.0*kg);
     var fat=Math.round(0.9*kg);
     var carbs=Math.round((target-protein*4-fat*9)/4);
@@ -341,6 +350,7 @@
     document.getElementById('rF').textContent=fat;
     document.getElementById('rMaint').textContent=(Math.round(tdee/10)*10).toLocaleString('nl-NL');
     document.getElementById('rGoalNote').textContent = goal==='lose'?L.goalLose:goal==='gain'?L.goalGain:L.goalMaint;
+    var warnEl=document.getElementById('warn'); warnEl.textContent=L.warnLow; if(warnLow){warnEl.classList.add('on');}else{warnEl.classList.remove('on');}
     renderPlan(target); renderTrain(days);
     var res=document.getElementById('results'); res.classList.add('on');
     res.scrollIntoView({behavior:'smooth',block:'start'});
