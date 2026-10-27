@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/icon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<meta content="HybridFuelCo" property="og:site_name"/>
+<meta content="website" property="og:type"/>
+<meta content="Free macro calculator for Hyrox &amp; hybrid athletes" property="og:title"/>
+<meta content="Calculate your calories and macros free, and get a sample 3-day meal plan and training week. Built by a chef who trains." property="og:description"/>
+<meta content="https://hybridfuelco.com/calculator.html" property="og:url"/>
+<meta content="https://hybridfuelco.com/social-preview-en.jpg" property="og:image"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="nl_NL" property="og:locale:alternate"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Free macro calculator for Hyrox &amp; hybrid athletes" name="twitter:title"/>
+<meta content="Calculate your calories and macros free, with a sample 3-day meal plan and training week." name="twitter:description"/>
+<meta content="https://hybridfuelco.com/social-preview-en.jpg" name="twitter:image"/>
+<title>Free macro calculator for Hyrox &amp; hybrid athletes — HybridFuelCo</title>
+<meta content="Free macro calculator for Hyrox and hybrid athletes. Get your calories and macros, a sample 3-day meal plan and a training week — no account needed." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="#0A0A0A" name="theme-color"/>
+<link href="https://hybridfuelco.com/calculator.html" rel="canonical"/>
+<link href="https://hybridfuelco.com/calculator.html" hreflang="en" rel="alternate"/>
+<link href="https://hybridfuelco.com/nl/calculator.html" hreflang="nl" rel="alternate"/>
+<link href="https://hybridfuelco.com/calculator.html" hreflang="x-default" rel="alternate"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+  :root{--black:#0A0A0A;--black2:#121212;--white:#FFFFFF;--red:#E11D48;--red2:#FB7185;--muted:#9a9a9a;--line:#242424;--sage:#34D399}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--black);color:#e9e9e9;font-family:Inter,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .disp{font-family:Archivo,sans-serif}
+  a{color:inherit}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .navin{max-width:980px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:16px}
+  .brand{display:flex;align-items:center;gap:11px;flex:1;text-decoration:none}
+  .brand .mark{width:28px;height:28px;border-radius:7px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:Archivo;font-weight:800;color:#fff;font-size:16px}
+  .brand .name{font-family:Archivo;font-weight:800;font-size:17px;letter-spacing:-.3px}
+  .brand .name span{color:var(--red)}
+  .back{color:var(--muted);font-size:13.5px;font-weight:500;transition:color .2s;text-decoration:none}
+  .back:hover{color:#fff}
+  .langtoggle{display:flex;gap:2px;align-items:center;font-family:Archivo}
+  .langtoggle .lt{font-weight:700;font-size:12px;color:var(--muted);padding:5px 9px;border-radius:7px;border:1px solid transparent;transition:color .2s,background .2s,border-color .2s;text-decoration:none}
+  .langtoggle .lt:hover{color:#fff}
+  .langtoggle .lt.on{color:#fff;background:rgba(225,29,72,.14);border-color:var(--red)}
+  header.top{padding:52px 0 10px}
+  .tag{color:var(--red);font-size:12.5px;font-weight:700;letter-spacing:.5px;margin-bottom:12px;text-transform:uppercase}
+  h1{font-family:Archivo;font-weight:900;font-size:clamp(28px,5vw,44px);letter-spacing:-1.1px;line-height:1.05}
+  .lead{font-size:17px;color:#cfcfcf;margin-top:16px;max-width:620px}
+  .card{background:var(--black2);border:1px solid var(--line);border-radius:18px;padding:26px;margin-top:30px}
+  .card h2{font-family:Archivo;font-weight:800;font-size:20px;letter-spacing:-.3px;margin-bottom:4px}
+  .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:18px}
+  @media(min-width:620px){.grid{grid-template-columns:1fr 1fr}}
+  .field label{display:block;font-size:12.5px;color:var(--muted);font-weight:600;margin-bottom:7px}
+  .field input,.field select{width:100%;background:#0e0e0e;border:1px solid var(--line);border-radius:10px;padding:12px 13px;color:#fff;font-size:15px;font-family:Inter}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--red)}
+  .seg{display:flex;gap:8px}
+  .seg button{flex:1;background:#0e0e0e;border:1px solid var(--line);border-radius:10px;padding:11px 8px;color:var(--muted);font-family:Archivo;font-weight:700;font-size:13.5px;cursor:pointer;transition:.18s}
+  .seg button.on{color:#fff;background:rgba(225,29,72,.14);border-color:var(--red)}
+  .hgt-imp{display:none;gap:8px}
+  .hgt-imp.show{display:flex}
+  .calcbtn{width:100%;margin-top:22px;background:var(--red);color:#fff;border:none;font-family:Archivo;font-weight:700;font-size:16px;padding:15px 0;border-radius:11px;cursor:pointer;transition:filter .2s}
+  .calcbtn:hover{filter:brightness(1.08)}
+  .results{display:none;margin-top:30px}
+  .results.on{display:block;animation:fade .4s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .resrow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(min-width:620px){.resrow{grid-template-columns:repeat(4,1fr)}}
+  .rbox{background:var(--black2);border:1px solid var(--line);border-radius:14px;padding:18px 16px;text-align:center}
+  .rbox.hero{border-color:var(--red);background:linear-gradient(180deg,rgba(225,29,72,.1),transparent 70%)}
+  .rbox .k{color:var(--muted);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.4px}
+  .rbox .v{font-family:Archivo;font-weight:800;font-size:30px;letter-spacing:-1px;margin-top:6px}
+  .rbox .v small{font-size:13px;color:var(--muted);font-weight:400}
+  .maintnote{color:var(--muted);font-size:13px;margin-top:12px;text-align:center}
+  .sec-h{font-family:Archivo;font-weight:800;font-size:19px;letter-spacing:-.3px;margin:34px 0 6px}
+  .sec-sub{color:var(--muted);font-size:13.5px;margin-bottom:14px}
+  .days{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:720px){.days{grid-template-columns:repeat(3,1fr)}}
+  .day{background:var(--black2);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .day .dh{font-family:Archivo;font-weight:700;font-size:14px;color:#fff;margin-bottom:10px;display:flex;justify-content:space-between;align-items:baseline}
+  .day .dh small{color:var(--red);font-size:12px;font-weight:700}
+  .meal{border-top:1px solid var(--line);padding:9px 0;font-size:13.5px}
+  .meal:first-of-type{border-top:none}
+  .meal .mt{color:var(--muted);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+  .meal .mn{color:#eee;margin-top:2px}
+  .meal .mk{color:var(--muted);font-size:11.5px}
+  .train{display:flex;flex-direction:column;gap:8px}
+  .trow{background:var(--black2);border:1px solid var(--line);border-radius:11px;padding:12px 15px;display:flex;align-items:center;gap:13px}
+  .trow .tn{font-family:Archivo;font-weight:700;font-size:12px;color:var(--red);min-width:42px}
+  .trow .tl{font-size:14px;color:#eee}
+  .trow .tl small{color:var(--muted);font-size:12px;display:block}
+  .disclaim{color:var(--muted);font-size:12px;margin-top:20px;border-left:2px solid var(--line);padding-left:14px}
+  .upsell{background:linear-gradient(180deg,rgba(225,29,72,.1),transparent 65%);border:1px solid var(--red);border-radius:18px;padding:28px 24px;margin-top:30px;text-align:center}
+  .upsell h3{font-family:Archivo;font-weight:800;font-size:clamp(20px,3.5vw,25px);letter-spacing:-.4px}
+  .upsell p{color:#cfcfcf;font-size:14.5px;margin:10px auto 0;max-width:460px}
+  .up-form{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:18px}
+  .up-form input[type=email]{flex:1;min-width:210px;background:#0e0e0e;border:1px solid var(--line);border-radius:10px;padding:13px 15px;color:#fff;font-size:15px;font-family:Inter}
+  .up-form input[type=email]:focus{outline:none;border-color:var(--red)}
+  .up-form button{background:var(--red);color:#fff;border:none;font-family:Archivo;font-weight:700;font-size:14.5px;padding:13px 22px;border-radius:10px;cursor:pointer}
+  .up-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .up-fine{color:var(--muted);font-size:11.5px;margin-top:11px}
+  .up-done{display:none}
+  .up-done.on{display:block}
+  .up-form.hide{display:none}
+  .up-dl{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:14px}
+  .up-dl a{text-decoration:none;font-family:Archivo;font-weight:700;font-size:14px;padding:12px 20px;border-radius:10px;background:var(--red);color:#fff}
+  .up-dl a.alt{background:transparent;border:1px solid var(--line);color:#fff}
+  .up-dl a.alt:hover{border-color:#fff}
+  .applink{display:inline-block;margin-top:16px;color:var(--muted);font-size:13.5px;text-decoration:underline;text-underline-offset:3px}
+  footer{padding:40px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px;margin-top:40px}
+  .flinks{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:16px}
+  .flinks a{color:var(--muted);text-decoration:none}
+  .flinks a:hover{color:#fff}
+  .fb{font-family:Archivo;font-weight:800;font-size:16px;color:#fff;margin-bottom:8px;letter-spacing:-.3px}
+  .fb span{color:var(--red)}
+  .err{color:var(--red2);font-size:13px;margin-top:12px;display:none}
+  .err.on{display:block}
+  #langsug{display:none;position:fixed;left:0;right:0;bottom:0;z-index:100;background:#141212;border-top:1px solid #242424;padding:12px 16px;align-items:center;justify-content:center;gap:14px;font-size:13.5px;color:#d6d6d6;flex-wrap:wrap}
+  #langsug a{font-family:Archivo;font-weight:700;color:#fff;background:#E11D48;padding:8px 14px;border-radius:8px;white-space:nowrap;text-decoration:none}
+  #langsug .x{cursor:pointer;color:#8C8C8C;font-size:18px;line-height:1;padding:0 4px}
+</style>
+</head>
+<body>
+<nav>
+<div class="navin">
+<a class="brand" href="index.html"><div class="mark">H</div><div class="name">HYBRIDFUEL<span>CO</span></div></a>
+<a class="back" href="index.html">&larr; Home</a>
+<div class="langtoggle"><a class="lt on" href="/calculator.html">EN</a><a class="lt" href="/nl/calculator.html">NL</a></div>
+</div>
+</nav>
+<header class="top">
+<div class="wrap">
+<div class="tag">Free &middot; no account</div>
+<h1 class="disp">Free macro calculator for Hyrox &amp; hybrid athletes</h1>
+<p class="lead">Get your calories and macros in seconds, plus a sample 3-day meal plan and training week. Built on real formulas by a chef who trains — not a one-size-fits-all guess.</p>
+</div>
+</header>
+<main>
+<div class="wrap">
+<div class="card">
+<h2>Your details</h2>
+<div class="grid">
+<div class="field">
+<label>Sex</label>
+<div class="seg" id="segSex">
+<button class="on" data-v="m" type="button">Male</button>
+<button data-v="f" type="button">Female</button>
+</div>
+</div>
+<div class="field">
+<label>Units</label>
+<div class="seg" id="segUnits">
+<button class="on" data-v="metric" type="button">kg / cm</button>
+<button data-v="imperial" type="button">lb / ft-in</button>
+</div>
+</div>
+<div class="field">
+<label>Age</label>
+<input id="age" inputmode="numeric" placeholder="e.g. 38" type="number"/>
+</div>
+<div class="field" id="fWeight">
+<label id="lWeight">Weight (kg)</label>
+<input id="weight" inputmode="decimal" placeholder="e.g. 82" type="number"/>
+</div>
+<div class="field" id="fHeightM">
+<label>Height (cm)</label>
+<input id="heightcm" inputmode="numeric" placeholder="e.g. 182" type="number"/>
+</div>
+<div class="field" id="fHeightImp" style="display:none">
+<label>Height (ft / in)</label>
+<div class="hgt-imp show">
+<input id="ft" inputmode="numeric" placeholder="ft" type="number"/>
+<input id="inch" inputmode="numeric" placeholder="in" type="number"/>
+</div>
+</div>
+<div class="field">
+<label>Training days per week</label>
+<select id="days">
+<option value="0">0 — just starting</option>
+<option value="2">1–2</option>
+<option value="4" selected="">3–4</option>
+<option value="6">5–6</option>
+<option value="7">7</option>
+</select>
+</div>
+<div class="field">
+<label>Goal</label>
+<select id="goal">
+<option value="lose">Lose fat</option>
+<option value="maintain" selected="">Maintain / perform</option>
+<option value="gain">Lean gain</option>
+</select>
+</div>
+</div>
+<button class="calcbtn" id="calcBtn" type="button">Calculate my macros</button>
+<div class="err" id="err">Please fill in your age, weight and height.</div>
+</div>
+
+<div class="results" id="results">
+<div class="resrow">
+<div class="rbox hero"><div class="k">Daily target</div><div class="v"><span id="rTarget">0</span> <small>kcal</small></div></div>
+<div class="rbox"><div class="k">Protein</div><div class="v"><span id="rP">0</span><small>g</small></div></div>
+<div class="rbox"><div class="k">Carbs</div><div class="v"><span id="rC">0</span><small>g</small></div></div>
+<div class="rbox"><div class="k">Fat</div><div class="v"><span id="rF">0</span><small>g</small></div></div>
+</div>
+<div class="maintnote">Your maintenance is about <strong id="rMaint">0</strong> kcal. <span id="rGoalNote"></span></div>
+
+<h3 class="sec-h">A sample 3-day plan</h3>
+<p class="sec-sub">Three rotating days built around your target — the kind of structure the app turns into exact weigh-out grams and a shopping list.</p>
+<div class="days" id="daysOut"></div>
+
+<h3 class="sec-h">A sample training week</h3>
+<p class="sec-sub">A hybrid split for your training days — strength, running and Hyrox conditioning.</p>
+<div class="train" id="trainOut"></div>
+
+<div class="disclaim">General nutrition information, not medical advice. Calorie and macro targets are estimates; individual needs vary. With a medical condition, pregnancy, if you're under 18, or a history of disordered eating, talk to a doctor or dietitian first.</div>
+
+<div class="upsell">
+<h3>Want this as your real weekly plan?</h3>
+<p>Leave your email and get the free Excel tracker + Hyrox starter guide. Then build your personal week plan — exact grams, shopping list and race-day plan — in the app.</p>
+<form class="up-form" id="upForm" onsubmit="return upSubmit(event)">
+<input autocomplete="off" aria-hidden="true" class="up-hp" name="company" tabindex="-1" type="text"/>
+<input aria-label="Email" id="upEmail" placeholder="your@email.com" required="" type="email"/>
+<button type="submit">Send me the free pack</button>
+</form>
+<div class="up-fine" id="upFine">We'll send occasional training &amp; fuelling tips and the odd offer. Unsubscribe anytime. See our <a href="privacy.html">privacy statement</a>.</div>
+<div class="up-done" id="upDone">
+<p style="color:#fff;font-weight:600">Done — check below.</p>
+<div class="up-dl">
+<a download="" href="tracker-en.xlsx">Excel tracker</a>
+<a class="alt" download="" href="hyrox-starter-en.pdf">Hyrox starter (PDF)</a>
+<a class="alt" href="https://app.hybridfuelco.com">Open the app</a>
+</div>
+</div>
+<a class="applink" href="index.html#prijzen">Or see the plans &rarr;</a>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<div class="wrap">
+<div class="fb">HYBRIDFUEL<span>CO</span></div>
+<div class="flinks">
+<a href="index.html">Home</a>
+<a href="index.html#functies">Features</a>
+<a href="index.html#prijzen">Pricing</a>
+<a href="voorwaarden.html">Terms</a>
+<a href="privacy.html">Privacy</a>
+<a href="disclaimer.html">Disclaimer</a>
+</div>
+<div>HybridFuelCo &middot; Fuel the work.</div>
+</div>
+</footer>
+<div id="langsug"><span>Deze site is ook in het Nederlands beschikbaar.</span><a href="/nl/calculator.html">Naar Nederlands</a><span class="x" id="langsug-x">&times;</span></div>
+<script>
+(function(){
+  var L={
+    weightKg:"Weight (kg)", weightLb:"Weight (lb)",
+    goalLose:"To lose fat at a safe pace, eat around your target. Keep protein high and most carbs around training.",
+    goalMaint:"This keeps you fuelled to train and perform while holding your weight.",
+    goalGain:"A small surplus for lean gain — slow and steady protects against fat gain.",
+    bf:"Breakfast", lu:"Lunch", di:"Dinner", sn:"Snack", perday:"/day"
+  };
+  var sex='m', units='metric';
+  function seg(id,cb){var el=document.getElementById(id);el.querySelectorAll('button').forEach(function(b){b.onclick=function(){el.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');cb(b.getAttribute('data-v'));};});}
+  seg('segSex',function(v){sex=v;});
+  seg('segUnits',function(v){units=v;
+    document.getElementById('lWeight').textContent = v==='metric'?L.weightKg:L.weightLb;
+    document.getElementById('weight').placeholder = v==='metric'?'e.g. 82':'e.g. 181';
+    document.getElementById('fHeightM').style.display = v==='metric'?'':'none';
+    document.getElementById('fHeightImp').style.display = v==='metric'?'none':'';
+  });
+
+  var DAYS=[
+    {name:'Day A', meals:[['bf','Oats, quark &amp; berries'],['lu','Chicken, rice &amp; veg'],['di','Salmon, potato &amp; salad'],['sn','Skyr with nuts']]},
+    {name:'Day B', meals:[['bf','Eggs &amp; wholegrain toast'],['lu','Beef, potato &amp; veg'],['di','White fish, rice &amp; greens'],['sn','Fruit &amp; a handful of nuts']]},
+    {name:'Day C', meals:[['bf','Protein smoothie &amp; fruit'],['lu','Turkey wrap with salad'],['di','Steak, sweet potato &amp; avocado'],['sn','Banana']]}
+  ];
+  var SPLIT={bf:.25,lu:.30,di:.35,sn:.10};
+  var TRAIN=[
+    ['Mon','Lower-body strength','squat, hinge, core'],
+    ['Tue','Hyrox conditioning','sled, wall balls, row intervals'],
+    ['Wed','Run intervals','e.g. 6×800m'],
+    ['Thu','Upper / full-body strength','press, pull, carries'],
+    ['Fri','Easy run or mobility','recovery pace'],
+    ['Sat','Long run or Hyrox sim','steady, race-feel'],
+    ['Sun','Rest / active recovery','walk, stretch']
+  ];
+
+  function renderPlan(target){
+    var out=document.getElementById('daysOut'); out.innerHTML='';
+    DAYS.forEach(function(d){
+      var h='<div class="day"><div class="dh">'+d.name+'<small>~'+target+' kcal</small></div>';
+      d.meals.forEach(function(m){
+        var kc=Math.round(target*SPLIT[m[0]]/10)*10;
+        h+='<div class="meal"><div class="mt">'+L[m[0]]+'</div><div class="mn">'+m[1]+'</div><div class="mk">~'+kc+' kcal</div></div>';
+      });
+      h+='</div>'; out.innerHTML+=h;
+    });
+  }
+  function renderTrain(days){
+    var n = days<=0?2: days<=2?2: days<=4?4: days<=6?6:7;
+    var picks = days<=0 ? [TRAIN[0],TRAIN[2]] : TRAIN.filter(function(_,i){return i<7;});
+    var chosen=[];
+    if(days<=0){chosen=[TRAIN[0],TRAIN[5]];}
+    else if(days<=2){chosen=[TRAIN[1],TRAIN[5]];}
+    else if(days<=4){chosen=[TRAIN[0],TRAIN[2],TRAIN[3],TRAIN[5]];}
+    else if(days<=6){chosen=[TRAIN[0],TRAIN[1],TRAIN[2],TRAIN[3],TRAIN[4],TRAIN[5]];}
+    else {chosen=TRAIN.slice();}
+    var out=document.getElementById('trainOut'); out.innerHTML='';
+    chosen.forEach(function(t){
+      out.innerHTML+='<div class="trow"><div class="tn">'+t[0]+'</div><div class="tl">'+t[1]+'<small>'+t[2]+'</small></div></div>';
+    });
+  }
+
+  document.getElementById('calcBtn').onclick=function(){
+    var age=parseFloat(document.getElementById('age').value);
+    var kg, cm;
+    if(units==='metric'){ kg=parseFloat(document.getElementById('weight').value); cm=parseFloat(document.getElementById('heightcm').value); }
+    else { kg=parseFloat(document.getElementById('weight').value)/2.20462; var ft=parseFloat(document.getElementById('ft').value)||0; var inch=parseFloat(document.getElementById('inch').value)||0; cm=(ft*12+inch)*2.54; }
+    var err=document.getElementById('err');
+    if(!age||!kg||!cm||age<14||age>99||kg<35||cm<120){ err.classList.add('on'); return; }
+    err.classList.remove('on');
+    var days=parseFloat(document.getElementById('days').value);
+    var goal=document.getElementById('goal').value;
+    var bmr=10*kg+6.25*cm-5*age+(sex==='m'?5:-161);
+    var af = days<=0?1.3: days<=2?1.42: days<=4?1.55: days<=6?1.7:1.8;
+    var tdee=bmr*af;
+    var target = goal==='lose'? tdee*0.82 : goal==='gain'? tdee*1.08 : tdee;
+    if(target<bmr*1.1) target=bmr*1.1;
+    var protein=Math.round(2.0*kg);
+    var fat=Math.round(0.9*kg);
+    var carbs=Math.round((target-protein*4-fat*9)/4);
+    if(carbs<50) carbs=50;
+    target=Math.round(target/10)*10;
+    document.getElementById('rTarget').textContent=target.toLocaleString();
+    document.getElementById('rP').textContent=protein;
+    document.getElementById('rC').textContent=carbs;
+    document.getElementById('rF').textContent=fat;
+    document.getElementById('rMaint').textContent=(Math.round(tdee/10)*10).toLocaleString();
+    document.getElementById('rGoalNote').textContent = goal==='lose'?L.goalLose:goal==='gain'?L.goalGain:L.goalMaint;
+    renderPlan(target); renderTrain(days);
+    var res=document.getElementById('results'); res.classList.add('on');
+    res.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+
+  window.upSubmit=function(e){
+    e.preventDefault();
+    var f=document.getElementById('upForm');
+    var hp=f.querySelector('.up-hp'); if(hp&&hp.value){return false;}
+    var em=document.getElementById('upEmail').value.trim(); if(!em){return false;}
+    var lang=(document.documentElement.lang||'en').slice(0,2);
+    try{
+      var body='email='+encodeURIComponent(em)+'&lang='+lang+'&source=website-calculator&ts='+encodeURIComponent(new Date().toISOString());
+      fetch('https://hook.eu1.make.com/fsljkjtafa64lt7f7c96fnsu8aodk9uf',{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body});
+    }catch(err){}
+    f.classList.add('hide');
+    document.getElementById('upFine').style.display='none';
+    document.getElementById('upDone').classList.add('on');
+    return false;
+  };
+})();
+</script>
+<script src="https://www.hybridfuelco.com/consent.js"></script>
+<script>(function(){try{if(localStorage.getItem('hf_langsug'))return;var l=(navigator.language||navigator.userLanguage||'').toLowerCase();if(l.indexOf('nl')!==0)return;var b=document.getElementById('langsug');if(!b)return;b.style.display='flex';document.getElementById('langsug-x').onclick=function(){b.style.display='none';try{localStorage.setItem('hf_langsug','1');}catch(e){}};}catch(e){}})();</script>
+</body>
+</html>
