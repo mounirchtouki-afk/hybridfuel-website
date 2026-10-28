@@ -481,7 +481,7 @@
           <li>Tracker, water &amp; vandaag-dashboard</li>
           <li>Training loggen + weekschema</li>
         </ul>
-        <div class="pbtn"><a class="soft tap" href="https://app.hybridfuelco.com">Kies Basis</a></div>
+        <div class="pbtn"><a class="soft tap" data-plan="basis" href="https://app.hybridfuelco.com/api/create-subscription?tier=basis&amp;interval=month">Kies Basis</a></div>
       </div>
       <div class="plan hot">
         <div class="pin">Meest gekozen</div>
@@ -495,7 +495,7 @@
           <li>Hyrox Race Protocol</li>
           <li>Herplanner (leven gebeurt)</li>
         </ul>
-        <div class="pbtn"><a class="solid tap" href="https://app.hybridfuelco.com">Kies Pro</a></div>
+        <div class="pbtn"><a class="solid tap" data-plan="pro" href="https://app.hybridfuelco.com/api/create-subscription?tier=pro&amp;interval=month">Kies Pro</a></div>
       </div>
     </div>
     <div class="founding rv">Wees een van de eersten — oprichtersleden die zich bij de gratis lijst hierboven aanmelden, krijgen een instapkorting op hun abonnement.</div>
@@ -551,6 +551,10 @@ function setBill(b){
   document.body.classList.toggle('bill-yr',b==='yr');
   document.getElementById('tmo').classList.toggle('on',b==='mo');
   document.getElementById('tyr').classList.toggle('on',b==='yr');
+  var iv = b==='yr' ? 'year' : 'month';
+  document.querySelectorAll('a[data-plan]').forEach(function(a){
+    a.href = 'https://app.hybridfuelco.com/api/create-subscription?tier=' + a.getAttribute('data-plan') + '&interval=' + iv;
+  });
 }
 function fgSubmit(e){
   e.preventDefault();
