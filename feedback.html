@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/icon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="HybridFuelCo" property="og:site_name"/>
+<title>Feedback — HybridFuelCo</title>
+<meta content="noindex, nofollow" name="robots"/>
+<meta content="#0A0A0A" name="theme-color"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+  :root{--black:#0A0A0A;--black2:#121212;--white:#FFFFFF;--red:#E11D48;--red2:#FB7185;--muted:#9a9a9a;--line:#242424;--sage:#34D399}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--black);color:#e9e9e9;font-family:Inter,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .disp{font-family:Archivo,sans-serif}
+  a{color:inherit}
+  .wrap{max-width:680px;margin:0 auto;padding:0 24px}
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .navin{max-width:980px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:16px}
+  .brand{display:flex;align-items:center;gap:11px;flex:1;text-decoration:none}
+  .brand .mark{width:28px;height:28px;border-radius:7px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:Archivo;font-weight:800;color:#fff;font-size:16px}
+  .brand .name{font-family:Archivo;font-weight:800;font-size:17px;letter-spacing:-.3px}
+  .brand .name span{color:var(--red)}
+  .back{color:var(--muted);font-size:13.5px;font-weight:500;transition:color .2s;text-decoration:none}
+  .back:hover{color:#fff}
+  .langtoggle{display:flex;gap:2px;align-items:center;font-family:Archivo}
+  .langtoggle .lt{font-weight:700;font-size:12px;color:var(--muted);padding:5px 9px;border-radius:7px;border:1px solid transparent;cursor:pointer;transition:.2s;text-decoration:none}
+  .langtoggle .lt:hover{color:#fff}
+  .langtoggle .lt.on{color:#fff;background:rgba(225,29,72,.14);border-color:var(--red)}
+  header.top{padding:48px 0 6px}
+  .tag{color:var(--red);font-size:12.5px;font-weight:700;letter-spacing:.5px;margin-bottom:12px;text-transform:uppercase}
+  h1{font-family:Archivo;font-weight:900;font-size:clamp(26px,5vw,38px);letter-spacing:-1px;line-height:1.08}
+  .lead{font-size:16px;color:#cfcfcf;margin-top:14px}
+  .card{background:var(--black2);border:1px solid var(--line);border-radius:18px;padding:26px;margin-top:28px;margin-bottom:40px}
+  .q{margin-bottom:26px}
+  .q:last-of-type{margin-bottom:0}
+  .qlabel{font-family:Archivo;font-weight:700;font-size:15.5px;color:#fff;margin-bottom:3px}
+  .qsub{font-size:12.5px;color:var(--muted);margin-bottom:13px}
+  .nps{display:flex;flex-wrap:wrap;gap:7px}
+  .nps button{flex:1;min-width:36px;background:#0e0e0e;border:1px solid var(--line);border-radius:9px;padding:11px 0;color:var(--muted);font-family:Archivo;font-weight:700;font-size:15px;cursor:pointer;transition:.15s}
+  .nps button:hover{border-color:var(--red2);color:#fff}
+  .nps button.on{background:var(--red);border-color:var(--red);color:#fff}
+  .npsends{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:8px}
+  .chips{display:flex;flex-wrap:wrap;gap:9px}
+  .chip{background:#0e0e0e;border:1px solid var(--line);border-radius:22px;padding:9px 15px;color:var(--muted);font-size:13.5px;font-weight:600;cursor:pointer;transition:.15s}
+  .chip:hover{border-color:var(--red2);color:#fff}
+  .chip.on{background:rgba(225,29,72,.14);border-color:var(--red);color:#fff}
+  textarea{width:100%;background:#0e0e0e;border:1px solid var(--line);border-radius:11px;padding:13px;color:#fff;font-size:14.5px;font-family:Inter;resize:vertical;min-height:84px}
+  textarea:focus{outline:none;border-color:var(--red)}
+  .submit{width:100%;margin-top:28px;background:var(--red);color:#fff;border:none;font-family:Archivo;font-weight:700;font-size:16px;letter-spacing:.4px;text-transform:uppercase;padding:15px 0;border-radius:11px;cursor:pointer;transition:filter .2s,opacity .2s}
+  .submit:hover{filter:brightness(1.08)}
+  .submit:disabled{opacity:.6;cursor:default}
+  .err{color:var(--red2);font-size:12.5px;margin-top:12px;text-align:center;display:none}
+  .thanks{display:none;text-align:center;padding:14px 0}
+  .thanks .ic{width:58px;height:58px;border-radius:50%;background:rgba(52,211,153,.14);border:1px solid var(--sage);color:var(--sage);display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 18px}
+  .thanks h2{font-family:Archivo;font-weight:800;font-size:22px;color:#fff;margin-bottom:8px}
+  .thanks p{font-size:14.5px;color:#cfcfcf;max-width:420px;margin:0 auto 22px}
+  .reactivate{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-family:Archivo;font-weight:700;font-size:14.5px;padding:13px 26px;border-radius:10px}
+  footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px;margin-top:10px}
+  footer .fb{font-family:Archivo;font-weight:800;font-size:16px;color:#fff;margin-bottom:10px}
+  footer .fb span{color:var(--red)}
+  footer .flinks{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
+  footer .flinks a{color:var(--muted);text-decoration:none;font-size:13px}
+  footer .flinks a:hover{color:#fff}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+<nav>
+<div class="navin">
+<a class="brand" href="index.html"><div class="mark">H</div><div class="name">HYBRIDFUEL<span>CO</span></div></a>
+<a class="back" href="index.html" data-t="home">&larr; Home</a>
+<div class="langtoggle"><span class="lt" data-lang="en">EN</span><span class="lt" data-lang="nl">NL</span></div>
+</div>
+</nav>
+
+<header class="top">
+<div class="wrap">
+<div class="tag" data-t="tag"></div>
+<h1 class="disp" data-t="h1"></h1>
+<p class="lead" data-t="lead"></p>
+</div>
+</header>
+
+<div class="wrap">
+<div class="card" id="formCard">
+  <div class="q">
+    <div class="qlabel" data-t="q1"></div>
+    <div class="qsub" data-t="q1sub"></div>
+    <div class="nps" id="nps"></div>
+    <div class="npsends"><span data-t="npsLow"></span><span data-t="npsHigh"></span></div>
+  </div>
+
+  <div class="q">
+    <div class="qlabel" data-t="q2"></div>
+    <div class="qsub" data-t="q2sub"></div>
+    <div class="chips" id="chips"></div>
+  </div>
+
+  <div class="q">
+    <div class="qlabel" data-t="q3"></div>
+    <div class="qsub" data-t="q3sub"></div>
+    <textarea id="comment" data-t-ph="q3ph"></textarea>
+  </div>
+
+  <button class="submit" id="submit" data-t="send"></button>
+  <div class="err" id="err" data-t="err"></div>
+</div>
+
+<div class="card thanks" id="thanks">
+  <div class="ic">&#10003;</div>
+  <h2 data-t="thanksH"></h2>
+  <p data-t="thanksP"></p>
+  <a class="reactivate" href="https://app.hybridfuelco.com" data-t="reactivate"></a>
+</div>
+</div>
+
+<footer>
+<div class="wrap">
+<div class="fb">HYBRIDFUEL<span>CO</span></div>
+<div class="flinks">
+<a href="index.html" data-t="fHome">Home</a>
+<a href="voorwaarden.html" data-t="fTerms">Terms</a>
+<a href="privacy.html">Privacy</a>
+</div>
+<div data-t="tagline"></div>
+</div>
+</footer>
+
+<script>
+// Make-webhook voor feedback-responses -> Google Sheet. Wordt gevuld zodra het scenario live staat.
+var FEEDBACK_WEBHOOK = "";
+
+var I18N = {
+  en: {
+    home: "← Home",
+    tag: "Feedback · 30 seconds",
+    h1: "Tell us why you stopped",
+    lead: "Your access ended. One honest answer helps us make HybridFuelCo better. No account, no catch, 30 seconds.",
+    q1: "How likely are you to recommend HybridFuelCo?",
+    q1sub: "0 = not at all, 10 = absolutely",
+    npsLow: "Not likely",
+    npsHigh: "Very likely",
+    q2: "What is the main reason you did not continue?",
+    q2sub: "Pick what fits. More than one is fine.",
+    q3: "What would you improve?",
+    q3sub: "Optional, but this is the gold for us.",
+    q3ph: "Type anything that would have kept you around...",
+    send: "Send feedback",
+    err: "Something went wrong. Please try again.",
+    thanksH: "Thanks, that helps.",
+    thanksP: "We read every response. If you ever want back in, the app is one tap away.",
+    reactivate: "Back to the app",
+    fHome: "Home", fTerms: "Terms",
+    tagline: "HybridFuelCo · Fuel the work.",
+    reasons: ["Too expensive","Not enough time","Reached my goal","Missing a feature","App too complex","Other"]
+  },
+  nl: {
+    home: "← Home",
+    tag: "Feedback · 30 seconden",
+    h1: "Vertel ons waarom je stopte",
+    lead: "Je toegang is afgelopen. Eén eerlijk antwoord helpt ons HybridFuelCo beter te maken. Geen account, geen addertje, 30 seconden.",
+    q1: "Hoe waarschijnlijk raad je HybridFuelCo aan?",
+    q1sub: "0 = helemaal niet, 10 = absoluut",
+    npsLow: "Niet waarschijnlijk",
+    npsHigh: "Heel waarschijnlijk",
+    q2: "Wat is de belangrijkste reden dat je niet doorging?",
+    q2sub: "Kies wat past. Meerdere mag.",
+    q3: "Wat zou je beter maken?",
+    q3sub: "Optioneel, maar dit is voor ons het goud.",
+    q3ph: "Typ alles wat je had laten blijven...",
+    send: "Verstuur feedback",
+    err: "Er ging iets mis. Probeer het opnieuw.",
+    thanksH: "Dank je, daar hebben we wat aan.",
+    thanksP: "We lezen elke reactie. Wil je ooit terug, de app staat op één tik.",
+    reactivate: "Terug naar de app",
+    fHome: "Home", fTerms: "Voorwaarden",
+    tagline: "HybridFuelCo · Fuel the work.",
+    reasons: ["Te duur","Te weinig tijd","Doel bereikt","Miste een functie","App te lastig","Anders"]
+  }
+};
+
+var state = { lang: "en", score: null, reasons: [] };
+
+function pickLang() {
+  var p = new URLSearchParams(location.search).get("lang");
+  if (p === "nl" || p === "en") return p;
+  try { if ((navigator.language || "").toLowerCase().indexOf("nl") === 0) return "nl"; } catch (e) {}
+  return "en";
+}
+
+function render() {
+  var t = I18N[state.lang];
+  document.documentElement.lang = state.lang;
+  document.querySelectorAll("[data-t]").forEach(function (el) {
+    var k = el.getAttribute("data-t");
+    if (t[k] != null) el.textContent = t[k];
+  });
+  document.querySelectorAll("[data-t-ph]").forEach(function (el) {
+    var k = el.getAttribute("data-t-ph");
+    if (t[k] != null) el.setAttribute("placeholder", t[k]);
+  });
+  document.querySelectorAll(".langtoggle .lt").forEach(function (el) {
+    el.classList.toggle("on", el.getAttribute("data-lang") === state.lang);
+  });
+  // NPS 0..10
+  var nps = document.getElementById("nps");
+  nps.innerHTML = "";
+  for (var i = 0; i <= 10; i++) {
+    (function (n) {
+      var b = document.createElement("button");
+      b.type = "button"; b.textContent = n;
+      if (state.score === n) b.classList.add("on");
+      b.onclick = function () { state.score = n; render(); };
+      nps.appendChild(b);
+    })(i);
+  }
+  // Reason chips
+  var chips = document.getElementById("chips");
+  chips.innerHTML = "";
+  t.reasons.forEach(function (r, idx) {
+    var c = document.createElement("div");
+    c.className = "chip" + (state.reasons.indexOf(idx) > -1 ? " on" : "");
+    c.textContent = r;
+    c.onclick = function () {
+      var p = state.reasons.indexOf(idx);
+      if (p > -1) state.reasons.splice(p, 1); else state.reasons.push(idx);
+      render();
+    };
+    chips.appendChild(c);
+  });
+}
+
+document.querySelectorAll(".langtoggle .lt").forEach(function (el) {
+  el.onclick = function () { state.lang = el.getAttribute("data-lang"); render(); };
+});
+
+document.getElementById("submit").onclick = function () {
+  var btn = this;
+  var err = document.getElementById("err");
+  err.style.display = "none";
+  // Reden-labels in het Engels normaliseren zodat de Sheet 1 taal houdt.
+  var reasonsEN = state.reasons.map(function (i) { return I18N.en.reasons[i]; });
+  var payload = {
+    score: state.score,
+    reasons: reasonsEN,
+    comment: (document.getElementById("comment").value || "").slice(0, 2000),
+    lang: state.lang,
+    ts: new Date().toISOString()
+  };
+  btn.disabled = true;
+  var done = function () {
+    document.getElementById("formCard").hidden = true;
+    document.getElementById("thanks").style.display = "block";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  if (!FEEDBACK_WEBHOOK) { done(); return; }
+  fetch(FEEDBACK_WEBHOOK, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) })
+    .then(function () { done(); })
+    .catch(function () { btn.disabled = false; err.style.display = "block"; });
+};
+
+state.lang = pickLang();
+render();
+</script>
+</body>
+</html>
