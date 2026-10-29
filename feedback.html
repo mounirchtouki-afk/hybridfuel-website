@@ -133,6 +133,9 @@
 <script>
 // Make-webhook voor feedback-responses -> Google Sheet.
 var FEEDBACK_WEBHOOK = "https://hook.eu1.make.com/6y8bcmmsh6h26ty9ps1l1m2me4ing2rx";
+// Gedeelde sleutel: Make negeert POSTs zonder deze sleutel. Houdt bots die de
+// kale webhook-URL vinden tegen (geen waterdicht geheim, het staat in de pagina).
+var FEEDBACK_KEY = "hfbk_b48237edeafd6e47457e7232ed8d3750";
 
 var I18N = {
   en: {
@@ -245,6 +248,7 @@ document.getElementById("submit").onclick = function () {
   // Reden-labels in het Engels normaliseren zodat de Sheet 1 taal houdt.
   var reasonsEN = state.reasons.map(function (i) { return I18N.en.reasons[i]; });
   var payload = {
+    k: FEEDBACK_KEY,
     ts: new Date().toISOString(),
     score: state.score == null ? "" : String(state.score),
     reasons: reasonsEN.join(", "),
