@@ -354,6 +354,7 @@
     renderPlan(target); renderTrain(days);
     var res=document.getElementById('results'); res.classList.add('on');
     res.scrollIntoView({behavior:'smooth',block:'start'});
+    try{ if(window.hfTrack) window.hfTrack('calculator_complete',{kcal:target,goal:(document.getElementById('goal')||{}).value}); }catch(err){}
   };
 
   window.upSubmit=function(e){
@@ -369,6 +370,7 @@
     f.classList.add('hide');
     document.getElementById('upFine').style.display='none';
     document.getElementById('upDone').classList.add('on');
+    try{ if(window.hfTrack) window.hfTrack('generate_lead',{value:2,currency:'EUR',method:'calculator',lang:lang}); }catch(err){}
     return false;
   };
 })();

@@ -574,8 +574,19 @@ function fgSubmit(e){
   f.classList.add('hide');
   var fine=document.getElementById('fgFine'); if(fine)fine.style.display='none';
   document.getElementById('fgDone').classList.add('on');
+  try{ if(window.hfTrack) window.hfTrack('generate_lead',{value:2,currency:'EUR',method:'leadmagnet',lang:lang}); }catch(err){}
   return false;
 }
+(function(){
+  document.addEventListener('click',function(ev){
+    var a=ev.target.closest&&ev.target.closest('a'); if(!a)return;
+    var plan=a.getAttribute('data-plan');
+    if(plan){ var yr=document.body.classList.contains('bill-yr'); var mo=plan==='pro'?14.95:9.95; try{ if(window.hfTrack) window.hfTrack('begin_checkout',{plan:plan,interval:yr?'year':'month',value:mo,currency:'EUR',items:[{item_id:plan,item_name:plan}]}); }catch(e){} return; }
+    var href=a.getAttribute('href')||'';
+    if(href.indexOf('app.hybridfuelco.com')>=0){ try{ if(window.hfTrack) window.hfTrack('view_app_cta',{location:(a.textContent||'').trim().slice(0,40)}); }catch(e){} return; }
+    if(href.indexOf('calculator')>=0){ try{ if(window.hfTrack) window.hfTrack('calculator_open',{}); }catch(e){} }
+  },true);
+})();
 (function(){
   var rvs=[].slice.call(document.querySelectorAll('.rv'));
   var secs=[].slice.call(document.querySelectorAll('.blk'));

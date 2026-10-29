@@ -38,7 +38,13 @@
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
     window.gtag("js", new Date());
-    window.gtag("config", GA4_ID);
+    // Cross-domain meten: website (hybridfuelco.com) en app (app.hybridfuelco.com)
+    // als één reis, zodat de bron/kanaal van een bezoeker niet verloren gaat bij
+    // de overstap naar de app. cookie_domain op de apex deelt de GA-cookie.
+    window.gtag("config", GA4_ID, {
+      cookie_domain: "hybridfuelco.com",
+      linker: { domains: ["hybridfuelco.com", "www.hybridfuelco.com", "app.hybridfuelco.com"], accept_incoming: true }
+    });
   }
   function loadPixel() {
     if (!META_PIXEL_ID || META_PIXEL_ID.indexOf("X") >= 0) return;
@@ -56,6 +62,21 @@
   window.hfTrackPurchase = function (value, currency) {
     try { if (window.gtag) window.gtag("event", "purchase", { value: value, currency: currency || "EUR" }); } catch (e) {}
     try { if (window.fbq) window.fbq("track", "Purchase", { value: value, currency: currency || "EUR" }); } catch (e) {}
+  };
+
+  // Generieke event-helper voor de hele site (werkt pas na toestemming; zonder
+  // gtag/fbq doet 'ie niets). Namen volgen de GA4-aanbevolen events waar mogelijk.
+  // Meta-equivalenten worden gemapt zodat beide pixels dezelfde funnel zien.
+  window.hfTrack = function (name, params) {
+    params = params || {};
+    try { if (window.gtag) window.gtag("event", name, params); } catch (e) {}
+    try {
+      if (window.fbq) {
+        var map = { generate_lead: "Lead", begin_checkout: "InitiateCheckout", calculator_complete: "Lead", view_app_cta: "ViewContent", sign_up: "CompleteRegistration" };
+        var fe = map[name];
+        if (fe) window.fbq("track", fe, params);
+      }
+    } catch (e) {}
   };
 
   var c = getConsent();
