@@ -131,8 +131,8 @@
 </footer>
 
 <script>
-// Make-webhook voor feedback-responses -> Google Sheet. Wordt gevuld zodra het scenario live staat.
-var FEEDBACK_WEBHOOK = "";
+// Make-webhook voor feedback-responses -> Google Sheet.
+var FEEDBACK_WEBHOOK = "https://hook.eu1.make.com/6y8bcmmsh6h26ty9ps1l1m2me4ing2rx";
 
 var I18N = {
   en: {
@@ -245,11 +245,11 @@ document.getElementById("submit").onclick = function () {
   // Reden-labels in het Engels normaliseren zodat de Sheet 1 taal houdt.
   var reasonsEN = state.reasons.map(function (i) { return I18N.en.reasons[i]; });
   var payload = {
-    score: state.score,
-    reasons: reasonsEN,
+    ts: new Date().toISOString(),
+    score: state.score == null ? "" : String(state.score),
+    reasons: reasonsEN.join(", "),
     comment: (document.getElementById("comment").value || "").slice(0, 2000),
-    lang: state.lang,
-    ts: new Date().toISOString()
+    lang: state.lang
   };
   btn.disabled = true;
   var done = function () {
