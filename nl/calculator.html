@@ -358,7 +358,8 @@
     renderPlan(target,protein,carbs,fat); renderTrain(days);
     var res=document.getElementById('results'); res.classList.add('on');
     res.scrollIntoView({behavior:'smooth',block:'start'});
-    try{ if(window.hfTrack) window.hfTrack('calculator_complete',{kcal:target,goal:(document.getElementById('goal')||{}).value}); }catch(err){}
+    // Anonieme, geaggregeerde invoer voor eigen onderzoek (geen persoonsgegevens: geen e-mail/IP/exact gewicht; leeftijd alleen als band). Vuurt pas na cookie-toestemming.
+    try{ if(window.hfTrack){ var ab=age<25?'u25':age<35?'25-34':age<45?'35-44':age<55?'45-54':'55plus'; window.hfTrack('calculator_complete',{kcal:target,goal:goal,sex:sex,age_band:ab,training_days:days,protein:protein,carbs:carbs,fat:fat,units:units}); } }catch(err){}
   };
 
   window.upSubmit=function(e){
