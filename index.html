@@ -245,6 +245,14 @@
   .oneoff .obtns a{font-family:var(--f-disp);font-weight:700;font-size:13px;color:var(--on-light);border:1.5px solid rgba(10,10,10,.28);border-radius:10px;padding:11px 15px;white-space:nowrap;transition:border-color .2s,color .2s}
   .oneoff .obtns a:hover{border-color:var(--red);color:var(--red)}
 
+  /* Founder proof */
+  .founderwrap{max-width:780px;margin:0 auto;text-align:center}
+  .founderwrap .lab{justify-content:center}.founderwrap .lab::before{display:none}
+  .founderq{font-family:var(--f-disp);font-weight:700;font-size:clamp(22px,3.4vw,34px);line-height:1.24;letter-spacing:-.6px;margin:8px 0 0;color:var(--on-dark);text-wrap:balance}
+  .founderq .dot{color:var(--red)}
+  .foundersig{margin-top:24px;font-family:var(--f-disp);font-weight:700;font-size:14px;color:var(--mut-dark);display:inline-flex;align-items:center;gap:9px}
+  .foundersig .fsdot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(225,29,72,.16)}
+
   /* FAQ */
   .faqwrap{max-width:760px;margin:0 auto;width:100%}
   .faq{margin-top:28px;display:flex;flex-direction:column;gap:10px}
@@ -424,6 +432,17 @@
   </div>
 </section>
 
+<!-- 5b · FOUNDER PROOF (dark) -->
+<section class="blk dark auto" id="founder" data-theme="dark">
+  <div class="pad">
+    <div class="founderwrap rv">
+      <span class="lab">Why I'm building this</span>
+      <blockquote class="founderq">&ldquo;Eight years in professional kitchens, training alongside it. I got tired of apps that hand you a number and walk away. So I built the plan I actually wanted: real food, real timing, built for hybrid training<span class="dot">.</span>&rdquo;</blockquote>
+      <div class="foundersig"><span class="fsdot"></span> Mounir &mdash; chef &amp; founder, HybridFuelCo</div>
+    </div>
+  </div>
+</section>
+
 <!-- 6 · FREE / LEAD MAGNET (light) -->
 <section class="blk light auto" id="gratis" data-theme="light">
   <div class="pad">
@@ -503,7 +522,7 @@
       </div>
     </div>
     <div class="rv" style="text-align:center;margin-top:22px;font-size:15px">Not sure yet? <a href="https://app.hybridfuelco.com/?demo=1" style="color:var(--red);font-weight:700;text-decoration:underline;text-underline-offset:3px">Take a look inside the app first &rarr;</a></div>
-    <div class="founding rv">Be one of the first — founding members who join the free list above get an intro discount.</div>
+    <div class="founding rv">Founding members — be one of the first to join at the founder's price, and keep it for life.</div>
   </div>
 </section>
 

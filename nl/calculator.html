@@ -81,8 +81,9 @@
   .days{display:grid;grid-template-columns:1fr;gap:14px}
   @media(min-width:720px){.days{grid-template-columns:repeat(3,1fr)}}
   .day{background:var(--black2);border:1px solid var(--line);border-radius:14px;padding:16px}
-  .day .dh{font-family:Archivo;font-weight:700;font-size:14px;color:#fff;margin-bottom:10px;display:flex;justify-content:space-between;align-items:baseline}
+  .day .dh{font-family:Archivo;font-weight:700;font-size:14px;color:#fff;margin-bottom:6px;display:flex;justify-content:space-between;align-items:baseline}
   .day .dh small{color:var(--red);font-size:12px;font-weight:700}
+  .day .daymac{font-size:11px;color:var(--red2);font-weight:600;letter-spacing:.2px;margin-bottom:8px}
   .meal{border-top:1px solid var(--line);padding:9px 0;font-size:13.5px}
   .meal:first-of-type{border-top:none}
   .meal .mt{color:var(--muted);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
@@ -213,7 +214,7 @@
 <div class="warn" id="warn"></div>
 
 <h3 class="sec-h">Een voorbeeld 3-daags plan</h3>
-<p class="sec-sub">Drie roulerende dagen rond je doel — het soort structuur dat de app omzet in exacte weeggewichten en een boodschappenlijst.</p>
+<p class="sec-sub">Drie roulerende dagen rond je calorieën en eiwit — het soort structuur dat de app omzet in exacte weeggewichten, macro's per maaltijd en een boodschappenlijst.</p>
 <div class="days" id="daysOut"></div>
 
 <h3 class="sec-h">Een voorbeeld trainingsweek</h3>
@@ -224,7 +225,7 @@
 
 <div class="upsell">
 <h3>Dit als je echte weekplan?</h3>
-<p>Laat je e-mail achter en ontvang de gratis Excel-tracker + Hyrox-startgids. Bouw daarna je persoonlijke weekplan — exacte grammen, boodschappenlijst en racedagplan — in de app.</p>
+<p>Laat je e-mail achter voor de gratis Excel-tracker + Hyrox-startgids. Daarna maakt de app er je persoonlijke week van — exacte grammen en een boodschappenlijst — plus de twee dingen die geen tracker je geeft: een Hyrox-racedagplan dat aftelt vanaf je start, en één tik om te herplannen als het leven ertussen komt.</p>
 <form class="up-form" id="upForm" onsubmit="return upSubmit(event)">
 <input autocomplete="off" aria-hidden="true" class="up-hp" name="company" tabindex="-1" type="text"/>
 <input aria-label="E-mail" id="upEmail" placeholder="jouw@email.com" required="" type="email"/>
@@ -269,7 +270,8 @@
     errInput:"Vul een geldige leeftijd, gewicht en lengte in.",
     errMinor:"Deze calculator is voor volwassenen (18+). Ben je jonger dan 18, overleg dan met een arts of diëtist over voeding rond je training — ga niet diëten op een algemeen getal.",
     warnLow:"Dit is de laagste inname die we voor jouw lichaam nog veilig vinden. Minder eten werkt averechts — het remt vetverlies, kost je energie en spiermassa. Sneller resultaat? Train meer, snijd niet verder in je eten. Bij een medische aandoening of een verleden met een eetstoornis: overleg eerst met een professional.",
-    bf:"Ontbijt", lu:"Lunch", di:"Diner", sn:"Snack"
+    bf:"Ontbijt", lu:"Lunch", di:"Diner", sn:"Snack",
+    pShort:"E", cShort:"K", fShort:"V"
   };
   var sex='m', units='metric';
   function seg(id,cb){var el=document.getElementById(id);el.querySelectorAll('button').forEach(function(b){b.onclick=function(){el.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');cb(b.getAttribute('data-v'));};});}
@@ -297,13 +299,15 @@
     ['Zo','Rust / actief herstel','wandelen, stretchen']
   ];
 
-  function renderPlan(target){
+  function renderPlan(target,protein,carbs,fat){
     var out=document.getElementById('daysOut'); out.innerHTML='';
     DAYS.forEach(function(d){
       var h='<div class="day"><div class="dh">'+d.name+'<small>~'+target+' kcal</small></div>';
+      h+='<div class="daymac">'+protein+'g '+L.pShort+' &middot; '+carbs+'g '+L.cShort+' &middot; '+fat+'g '+L.fShort+'</div>';
       d.meals.forEach(function(m){
         var kc=Math.round(target*SPLIT[m[0]]/10)*10;
-        h+='<div class="meal"><div class="mt">'+L[m[0]]+'</div><div class="mn">'+m[1]+'</div><div class="mk">~'+kc+' kcal</div></div>';
+        var pm=Math.round(protein*SPLIT[m[0]]);
+        h+='<div class="meal"><div class="mt">'+L[m[0]]+'</div><div class="mn">'+m[1]+'</div><div class="mk">~'+kc+' kcal &middot; '+pm+'g '+L.pShort+'</div></div>';
       });
       h+='</div>'; out.innerHTML+=h;
     });
@@ -351,7 +355,7 @@
     document.getElementById('rMaint').textContent=(Math.round(tdee/10)*10).toLocaleString('nl-NL');
     document.getElementById('rGoalNote').textContent = goal==='lose'?L.goalLose:goal==='gain'?L.goalGain:L.goalMaint;
     var warnEl=document.getElementById('warn'); warnEl.textContent=L.warnLow; if(warnLow){warnEl.classList.add('on');}else{warnEl.classList.remove('on');}
-    renderPlan(target); renderTrain(days);
+    renderPlan(target,protein,carbs,fat); renderTrain(days);
     var res=document.getElementById('results'); res.classList.add('on');
     res.scrollIntoView({behavior:'smooth',block:'start'});
     try{ if(window.hfTrack) window.hfTrack('calculator_complete',{kcal:target,goal:(document.getElementById('goal')||{}).value}); }catch(err){}
