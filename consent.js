@@ -5,7 +5,7 @@
    >>> VUL JE TWEE ID'S IN <<<  */
 (function () {
   var GA4_ID = "G-P0Y8DF9B0L";          // Google Analytics 4 Measurement ID (G-...)
-  var META_PIXEL_ID = "XXXXXXXXXXXXXXX"; // Meta Pixel ID (cijfers)
+  var META_PIXEL_ID = "1137169525349816"; // Meta Pixel ID (cijfers)
   /* ====================================== */
 
   function getConsent() {
