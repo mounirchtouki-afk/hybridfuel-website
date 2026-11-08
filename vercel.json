@@ -1,5 +1,11 @@
 {
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "hybridfuelco.com" }],
+      "destination": "https://www.hybridfuelco.com/:path*",
+      "permanent": true
+    },
     { "source": "/verkooppagina.html", "destination": "/", "permanent": true }
   ],
   "headers": [
